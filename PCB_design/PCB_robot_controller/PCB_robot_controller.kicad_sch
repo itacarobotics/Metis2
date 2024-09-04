@@ -6,8 +6,8 @@
 	(paper "A4")
 	(lib_symbols)
 	(sheet
-		(at 101.854 90.424)
-		(size 34.544 17.272)
+		(at 146.558 89.154)
+		(size 60.452 25.146)
 		(fields_autoplaced yes)
 		(stroke
 			(width 0.1524)
@@ -18,7 +18,7 @@
 		)
 		(uuid "058aa0b4-fac2-445c-ac7e-43d3e4df4375")
 		(property "Sheetname" "buttons"
-			(at 101.854 89.7124 0)
+			(at 146.558 88.4424 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -27,7 +27,7 @@
 			)
 		)
 		(property "Sheetfile" "buttons.kicad_sch"
-			(at 101.854 108.2806 0)
+			(at 146.558 114.8846 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -44,8 +44,8 @@
 		)
 	)
 	(sheet
-		(at 51.308 50.8)
-		(size 37.592 24.13)
+		(at 75.184 51.562)
+		(size 68.072 89.916)
 		(fields_autoplaced yes)
 		(stroke
 			(width 0.1524)
@@ -56,7 +56,7 @@
 		)
 		(uuid "7f66a8ed-4951-4fbd-b642-27ea41431903")
 		(property "Sheetname" "NUCLEO64-F401RE"
-			(at 51.308 50.0884 0)
+			(at 75.184 50.8504 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -65,7 +65,7 @@
 			)
 		)
 		(property "Sheetfile" "NUCLEO64-F401RE.kicad_sch"
-			(at 51.308 75.5146 0)
+			(at 75.184 142.0626 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -82,8 +82,8 @@
 		)
 	)
 	(sheet
-		(at 49.784 88.646)
-		(size 39.878 19.05)
+		(at 146.05 121.92)
+		(size 60.198 19.05)
 		(fields_autoplaced yes)
 		(stroke
 			(width 0.1524)
@@ -94,7 +94,7 @@
 		)
 		(uuid "9a6e3f2b-0977-4798-bcf3-af97e02f49f7")
 		(property "Sheetname" "comunication"
-			(at 49.784 87.9344 0)
+			(at 146.05 121.2084 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -103,7 +103,7 @@
 			)
 		)
 		(property "Sheetfile" "comunication.kicad_sch"
-			(at 49.784 108.2806 0)
+			(at 146.05 141.5546 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -120,8 +120,8 @@
 		)
 	)
 	(sheet
-		(at 101.854 51.054)
-		(size 30.988 25.146)
+		(at 146.05 51.562)
+		(size 60.452 29.972)
 		(fields_autoplaced yes)
 		(stroke
 			(width 0.1524)
@@ -132,7 +132,7 @@
 		)
 		(uuid "f3ed1ab5-e511-4e05-aa5e-0d6a4c8f7d92")
 		(property "Sheetname" "robot_control"
-			(at 101.854 50.3424 0)
+			(at 146.05 50.8504 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -141,7 +141,7 @@
 			)
 		)
 		(property "Sheetfile" "robot_control.kicad_sch"
-			(at 101.854 76.7846 0)
+			(at 146.05 82.1186 0)
 			(effects
 				(font
 					(size 1.27 1.27)
