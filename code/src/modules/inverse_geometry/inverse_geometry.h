@@ -1,19 +1,16 @@
-/*
-    @author William Bailes <williambailes@gmail.com> http://tinkersprojects.com/
-*/
-
-
 #ifndef INVERSE_GEOMETRY_H
 #define INVERSE_GEOMETRY_H
 
-#include "../robot_description/robot_description.h"
 #include "math.h"
+#include "../robot_description/robot_description.h"
 
 #define PI          3.14159
 
 #define TAN30       0.57735
 #define SIN120      0.86603
 #define COS120      -0.5
+#define SIN240      -0.86603
+#define COS240      -0.5
 
 
 struct joints_t

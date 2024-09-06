@@ -1,5 +1,5 @@
 #include <iostream>
-#include "inverse_geometry.cpp"
+#include "../inverse_geometry.cpp"
 
 
 int main()
@@ -9,7 +9,7 @@ int main()
 
     pos_des.x = -40;
     pos_des.y = 30;
-    pos_des.z = -180;
+    pos_des.z = -100;
 
 
     bool rc;
