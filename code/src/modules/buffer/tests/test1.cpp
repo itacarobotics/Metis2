@@ -4,33 +4,42 @@
 #include "../buffer.h"
 
 
-#define BUFFER_SIZE   4
+#define BUFFER_SIZE   5
 
 int main()
 {
     Buffer<int32_t> buffer1(BUFFER_SIZE);
     int32_t item;
-    int32_t rc;
+    bool rc;
 
-    for (int32_t i = 0; i < 120; ++i ) {
-        if (buffer1.get_state() == BUFFER_FULL) {
-            std::cout << "[ERROR!] Buffer is full." << std::endl;
+    for (int32_t i = 0; i < 100; i++) {
+
+        if (buffer1.is_full()) {
+            std::cout << "[ERROR!] buffer is full!\n";
+            break;
+        }
+        
+        item = i * 3;       // compute calculations
+
+        rc = buffer1.produce(item);
+
+        if (rc == false) {
+            std::cout << "[ERROR!] item has not been added!\n";
             break;
         }
 
-        item = i*12;                // do computation
-        buffer1.add_item(item);
-        std::cout << "added item: " << item << std::endl;
+        std::cout << "item[" << i  << "]: " << item << "\n";
     }
 
-    for (int32_t i = 0; i < 9; ++i ) {
-        if (buffer1.get_state() == BUFFER_EMPTY) {
-            std::cout << "[ERROR!] Buffer is empty." << std::endl;
+    for (int32_t i = 0; i < 100; i++) {
+        rc = buffer1.consume(&item);
+
+        if (rc == false) {
+            std::cout << "[ERROR!] buffer is empty!\n";
             break;
         }
 
-        buffer1.get_item(&item);
-        std::cout << "buffer [" << i << "]: " << item << std::endl;     // use item
+        std::cout << "item[" << i  << "]: " << item << "\n";
     }
 
     return 0;

@@ -4,21 +4,15 @@
 #include "stdint.h"
 
 
-enum buffer_state_t {
-    BUFFER_EMPTY,
-    BUFFER_FULL,
-    BUFFER_READY
-};
-
-
 template <typename data_t>
 class Buffer
 {
 public:
     Buffer(int32_t buffer_size);
-    void            add_item(data_t item);
-    void            get_item(data_t *item);
-    buffer_state_t  get_state(void);
+    bool            produce(data_t item);
+    bool            consume(data_t *item);
+    bool            is_full(void);
+    bool            is_empty(void);
     void            reset(void);
 
 private:
@@ -26,6 +20,8 @@ private:
     int32_t         head_idx;
     int32_t         tail_idx;
     int32_t         buffer_size;
+    int32_t         buffer_length;
+    bool            mutex;          // semaphore to ensure syncronisation
 };
 
 
