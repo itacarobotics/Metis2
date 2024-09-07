@@ -1,8 +1,7 @@
 #ifndef BUFFER_H
 #define BUFFER_H
 
-#include "stdint.h"
-
+#include "data_t.h"
 
 template <typename data_t>
 class Buffer
@@ -25,6 +24,6 @@ private:
 };
 
 
-#include "buffer.cpp"
+#include "../buffer.cpp"
 
 #endif // BUFFER_H

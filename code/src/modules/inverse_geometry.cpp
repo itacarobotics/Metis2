@@ -1,29 +1,42 @@
-#include "inverse_geometry.h"
+#include "include/inverse_geometry.h"
 
 
-bool compute_angle(position_t pos_i, float *q_i)
+InverseGeometry::InverseGeometry(float r1, float l1, float l2, float r2)
 {
+    this->r1 = r1;
+    this->l1 = l1;
+    this->l2 = l2;
+    this->r2 = r2;
+    return;
+}
+
+
+bool InverseGeometry::compute_angle(position_t pos_i, float *q_i)
+{
+    // 
     float d, theta;
-    d = BASE_RADIUS - pos_i.y - EE_RADIUS;
+    d = r1 - pos_i.y - r2;
     theta = abs(atan2(pos_i.z, d));
 
-    float a, c, k;
-    a = FOREARM_LEN*FOREARM_LEN - pos_i.x*pos_i.x;
-    c = d*d + pos_i.z*pos_i.z;
-    k = abs((BICEPS_LEN*BICEPS_LEN + c - a) / (2 * BICEPS_LEN * sqrt(c)));
+    // 
+    float a, c, lambda;
+    a = l2*l2 - pos_i.x*pos_i.x;      // projecton of forearm onto zy plane
+    c = d*d + pos_i.z*pos_i.z;                          // distance between base and ee joint
+    lambda = abs((l1*l1 + c - a) /           // acos(lambda) 
+        (2 * l1 * sqrt(c)));      
 
-    if ( k > 1 ) {
+    if ( lambda > 1 ) {
         return false;   // no solution found
     }
 
-    *q_i = theta + acos(k) - PI;
+    *q_i = theta + acos(lambda) - M_PI;
 
     return true;        // solution found
 }
 
 
 
-bool inverse_geometry(position_t *pos, joints_t *joints)
+bool InverseGeometry::inverse_geometry(position_t *pos, joints_t *joints)
 {
     position_t pos_ = *pos;     // need a copy, so the og does not get changed
     bool rc;
