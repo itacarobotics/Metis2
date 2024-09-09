@@ -106,14 +106,15 @@ bool TrajectoryGenerator::get_next_via_point(position_t *pos)
     pos->t = travel_time * time_step_idx;   // via point time stamp
 
     float via_point_idx;                    // remapping index with quintic polynomial
-    if ((time_step_idx + time_step) < 1) {
-        // a0 = 0; a1 = 0; a2 = 0;
-        via_point_idx = a3 * pow(pos->t, 3) + a4 * pow(pos->t, 4) + a5 * pow(pos->t, 5);
-    } else {
-        // this is to avoid floating point errors when adding the time step
+    // a0 = 0; a1 = 0; a2 = 0;
+    via_point_idx = a3 * pow(pos->t, 3) + a4 * pow(pos->t, 4) + a5 * pow(pos->t, 5);
+    
+    // this is to avoid floating point errors when adding the time step
+    if ((time_step_idx + time_step) >= 1) {
         pos->t = travel_time;
         via_point_idx = 1;
     }
+
 
     // mapping end-effector position
     pos->x = ((1 - via_point_idx) * pos_start.x) + (via_point_idx * pos_end.x);

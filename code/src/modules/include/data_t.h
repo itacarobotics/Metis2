@@ -24,4 +24,10 @@ struct position_t
 };
 
 
+enum robot_state_t
+{
+    
+};
+
+
 #endif  // DATA_T_H
