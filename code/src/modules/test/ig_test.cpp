@@ -3,16 +3,9 @@
 
 #include "../include/inverse_geometry.h"
 
-
-#define BASE_RADIUS     60
-#define BICEPS_LEN      80
-#define FOREARM_LEN     120
-#define EE_RADIUS       20
-
-
 int main()
 {
-    InverseGeometry ig(BASE_RADIUS, BICEPS_LEN, FOREARM_LEN, EE_RADIUS);
+    InverseGeometry ig;
     position_t pos_des;
     joints_t q;
     bool rc;

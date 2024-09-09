@@ -3,6 +3,7 @@
 
 #include "math.h"
 #include "data_t.h"
+#include "configuration.h"
 
 #define TAN30       0.57735
 #define SIN120      0.86603
@@ -14,12 +15,11 @@
 class InverseGeometry
 {
 public:
-    InverseGeometry(float r1, float l1, float l2, float r2);
-    bool inverse_geometry(position_t *pos, joints_t *joints);
+    InverseGeometry();
+    bool    inverse_geometry(position_t *pos, joints_t *joints);
 
 private:
-    float r1, l1, l2, r2;
-    bool compute_angle(position_t pos_i, float *q_i);
+    bool    compute_angle(position_t pos_i, float *q_i);
 };
 
 

@@ -1,12 +1,8 @@
 #include "include/inverse_geometry.h"
 
 
-InverseGeometry::InverseGeometry(float r1, float l1, float l2, float r2)
+InverseGeometry::InverseGeometry()
 {
-    this->r1 = r1;
-    this->l1 = l1;
-    this->l2 = l2;
-    this->r2 = r2;
     return;
 }
 
@@ -15,15 +11,15 @@ bool InverseGeometry::compute_angle(position_t pos_i, float *q_i)
 {
     // 
     float d, theta;
-    d = r1 - pos_i.y - r2;
+    d = BASE_RADIUS - pos_i.y - EE_RADIUS;
     theta = abs(atan2(pos_i.z, d));
 
     // 
     float a, c, lambda;
-    a = l2*l2 - pos_i.x*pos_i.x;      // projecton of forearm onto zy plane
-    c = d*d + pos_i.z*pos_i.z;                          // distance between base and ee joint
-    lambda = abs((l1*l1 + c - a) /           // acos(lambda) 
-        (2 * l1 * sqrt(c)));      
+    a = FOREARM_LENGTH*FOREARM_LENGTH - pos_i.x*pos_i.x;        // projecton of forearm onto zy plane
+    c = d*d + pos_i.z*pos_i.z;                                  // distance between base and ee joint
+    lambda = abs((BICEPS_LENGTH*BICEPS_LENGTH + c - a) /        // acos(lambda) 
+        (2 * BICEPS_LENGTH * sqrt(c)));
 
     if ( lambda > 1 ) {
         return false;   // no solution found
@@ -35,7 +31,17 @@ bool InverseGeometry::compute_angle(position_t pos_i, float *q_i)
 }
 
 
-
+/**
+ *  @brief Inverse geometry of a 3-DOF delta robot.
+ *  @ingroup sorting_algorithms
+ *  @param  *pos Pointer to desired end-effector position.
+ *  @param  *joints Pointer to respective joints position.
+ *  @return true if position is feasable, false otherwise.
+ *
+ * This function implements a ligth-weight inverse geometry algorithm of a delta robot
+ * with equations derived from simple angle relationships and projections. Therefore, no 
+ * trigonometric systems of equations are solved.
+ */
 bool InverseGeometry::inverse_geometry(position_t *pos, joints_t *joints)
 {
     position_t pos_ = *pos;     // need a copy, so the og does not get changed

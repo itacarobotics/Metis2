@@ -1,36 +1,42 @@
 #ifndef TRAJECTORY_GENERATOR_H
 #define TRAJECTORY_GENERATOR_H
 
+#include <algorithm>
+#include "math.h"
+
+#include "configuration.h"
 #include "data_t.h"
+
+
+#define SQRT_10     3.16228
+#define SQRT2_3     1.31607
 
 class TrajectoryGenerator
 {
-private:
-    float       max_vel;
-    float       max_acc;
-    float       via_points_distance;
-    float       via_points_threshold;
+public:
+    TrajectoryGenerator();
+    ~TrajectoryGenerator();
+
+    bool        set_trajectory_ptp(position_t pos_start, position_t pos_end);
+    bool        get_next_via_point(position_t *pos);
 
     float       a3, a4, a5; // a0 = 0, a1 = 0, a2 = 0 --> parameters of quintic polynomial
 
     position_t  pos_start;
     position_t  pos_end;
-    float       via_point_idx;    // a value [0,1]
-    float       via_point_step;   // via_point_idx += via_point_step
+    float       travel_time;
 
-    float       get_path_length(void);
-    float       get_best_effort_time(float path_length);
-    void        set_via_point_step(float path_length);
+    float       time_step_idx;          // a value [0, 1]
+    float       time_step;              // time_idx += time_step
 
-public:
-    TrajectoryGenerator(float max_vel, float max_acc, 
-        float via_points_distance, float via_points_threshold);
-    ~TrajectoryGenerator();
+    float       get_path_length(position_t *pos_start, position_t *pos_end);
+    float       get_best_effort_time(float path_length, float max_vel, float max_acc);
+    float       get_time_step(float length, float step_distance);
 
-    bool        set_trajectory(position_t pos_start, position_t pos_end);
-    position_t  get_next_via_point(void);
-
+private:
 };
 
+
+#include "../trajectory_generator.cpp"
 
 #endif  // TRAJECTORY_GENERATOR_H
