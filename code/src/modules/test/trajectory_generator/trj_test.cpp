@@ -3,7 +3,7 @@
 #include <chrono>
 
 
-#include "../include/trajectory_generator.h"
+#include "../../include/trajectory_generator.h"
 
 
 int main()
@@ -42,7 +42,7 @@ int main()
     pos_end.t = -1;
 
     // Set trajectory
-    rc = tg.set_trajectory_ptp(pos_start, pos_end);
+    rc = tg.set_ptp_task(pos_start, pos_end);
 
     if (!rc) {
         std::cout << "[ERROR!] Invalid trajectory.\n";
@@ -50,7 +50,7 @@ int main()
     }
 
     while (true) {
-        rc = tg.get_next_via_point(&pos);
+        rc = tg.get_via_point(&pos);
 
         if (rc == false) {
             break;
@@ -74,10 +74,10 @@ int main()
     pos_end.y = 100;
     pos_end.z = 100;
     pos_end.k = -2.0;
-    pos_end.t = -1;
+    pos_end.t = 3.2;
 
     // Set trajectory
-    rc = tg.set_trajectory_ptp(pos_start, pos_end);
+    rc = tg.set_ptp_task(pos_start, pos_end);
 
     if (!rc) {
         std::cout << "[ERROR!] Invalid trajectory.\n";
@@ -85,7 +85,7 @@ int main()
     }
 
     while (true) {
-        rc = tg.get_next_via_point(&pos);
+        rc = tg.get_via_point(&pos);
 
         if (rc == false) {
             break;

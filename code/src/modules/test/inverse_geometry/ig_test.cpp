@@ -1,7 +1,7 @@
 #include <iostream>
 #include <chrono>
 
-#include "../include/inverse_geometry.h"
+#include "../../include/inverse_geometry.h"
 
 int main()
 {

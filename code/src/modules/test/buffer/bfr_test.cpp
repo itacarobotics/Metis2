@@ -1,7 +1,7 @@
 #include <iostream>
 #include "stdint.h"
 
-#include "../include/buffer.h"
+#include "../../include/buffer.h"
 
 
 #define BUFFER_SIZE   5

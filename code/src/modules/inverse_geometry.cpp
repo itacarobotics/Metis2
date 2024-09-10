@@ -27,13 +27,17 @@ bool InverseGeometry::compute_angle(position_t pos_i, float *q_i)
 
     *q_i = theta + acos(lambda) - M_PI;
 
+    // check joint limits
+    if (*q_i <= JOINT_LIMIT_MIN || *q_i >= JOINT_LIMIT_MAX) {
+        return false;
+    }
+
     return true;        // solution found
 }
 
 
 /**
  *  @brief Inverse geometry of a 3-DOF delta robot.
- *  @ingroup sorting_algorithms
  *  @param  *pos Pointer to desired end-effector position.
  *  @param  *joints Pointer to respective joints position.
  *  @return true if position is feasable, false otherwise.
@@ -68,6 +72,12 @@ bool InverseGeometry::inverse_geometry(position_t *pos, joints_t *joints)
     if (!rc) {
         return false;       // couldn't find a solution
     }
+
+    // chain 4
+    joints->q4 = pos->k;
+
+    // time stamp
+    joints->t = pos->t;
 
     return true;    // no errors encountered
 }

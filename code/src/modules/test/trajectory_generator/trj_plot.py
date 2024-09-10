@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 # Load data from CSV file (assuming space-delimited values)
-data = np.loadtxt('/home/ostifede02/itacarobotics/Metis2/code/src/modules/test/trj_data.csv', delimiter=' ')
+data = np.loadtxt('/home/ostifede02/itacarobotics/Metis2/code/src/modules/test/trajectory_generator/trj_data.csv', delimiter=' ')
 
 # Extract X, Y, and Z columns
 x_vals = data[:, 0]

@@ -23,7 +23,7 @@ TrajectoryGenerator::~TrajectoryGenerator()
  *  Sets the parameters needed to make a point to point trajectory with a quintic polynomial
  *  velocity profile.
  */
-bool TrajectoryGenerator::set_trajectory_ptp(position_t pos_start, position_t pos_end)
+bool TrajectoryGenerator::set_ptp_task(position_t pos_start, position_t pos_end)
 {
     bool rc;
 
@@ -35,9 +35,7 @@ bool TrajectoryGenerator::set_trajectory_ptp(position_t pos_start, position_t po
     this->via_point_time    = 0;
 
 
-    /**********************************
-     *   END-EFFECTOR POSITION
-     **********************************/
+    // end effector position
     float path_length       = 0;
     float path_travel_time  = 0;
 
@@ -47,9 +45,7 @@ bool TrajectoryGenerator::set_trajectory_ptp(position_t pos_start, position_t po
         path_travel_time = std::max(pos_end.t, path_travel_time);   // override if input value is greater
     }
 
-    /**********************************
-     *   END-EFFECTOR ROTATION
-     **********************************/
+    // end effector rotation
     float rot_length        = 0;
     float rot_travel_time   = 0;
 
@@ -87,7 +83,7 @@ bool TrajectoryGenerator::set_trajectory_ptp(position_t pos_start, position_t po
  *  stamp to follow a quintic polynomial velocity profile. When the end position is reached,
  *  this method returns false. 
  */
-bool TrajectoryGenerator::get_next_via_point(position_t *pos)
+bool TrajectoryGenerator::get_via_point(position_t *pos)
 {
     // mapping position index with quintic polynomial profile
     // a0 = 0; a1 = 0; a2 = 0;

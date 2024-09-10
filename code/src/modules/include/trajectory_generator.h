@@ -19,8 +19,8 @@ public:
     TrajectoryGenerator();
     ~TrajectoryGenerator();
 
-    bool        set_trajectory_ptp(position_t pos_start, position_t pos_end);
-    bool        get_next_via_point(position_t *pos);
+    bool        set_ptp_task(position_t pos_start, position_t pos_end);
+    bool        get_via_point(position_t *pos);
 
 private:
     float       a3, a4, a5; // a0 = 0, a1 = 0, a2 = 0 --> parameters of quintic polynomial
