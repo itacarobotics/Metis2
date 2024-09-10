@@ -15,8 +15,7 @@
 #define MAX_ROTATION_ACC                50      // [ rad/s2 ]
 
 // path resolution
-#define PATH_STEP_DISTANCE              2       // [ mm ]
-#define ROTATION_STEP_DISTANCE          0.01    // [ rad ]
+#define VIA_POINTS_TIME_STEP            0.01    // [ s ]
 
 
 #endif  // CONFIGURATION_H

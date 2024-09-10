@@ -29,8 +29,9 @@ private:
     position_t  pos_end;
     float       travel_time;
 
-    float       time_step_idx;          // a value [0, 1]
-    float       time_step;              // time_step_idx += time_step
+    float       via_point_idx;          // a value [0, 1]
+    float       via_point_step;         // increment of via_point_idx
+    float       via_point_time;         // a value [0, T]
 
     float       get_path_length(position_t *pos_start, position_t *pos_end);
     float       get_best_effort_time(float path_length, float max_vel, float max_acc);

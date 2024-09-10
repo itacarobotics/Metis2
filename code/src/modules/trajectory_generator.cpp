@@ -3,8 +3,8 @@
 
 TrajectoryGenerator::TrajectoryGenerator()
 {
-    this->time_step_idx   = 0;
-    this->time_step       = 0;
+    this->via_point_idx     = 0;
+    this->via_point_time    = 0;
 
     return;
 }
@@ -28,44 +28,41 @@ bool TrajectoryGenerator::set_trajectory_ptp(position_t pos_start, position_t po
     bool rc;
 
     // update attributes
-    this->pos_start     = pos_start;
-    this->pos_end       = pos_end;
-    this->time_step     = 0;
-    this->time_step_idx = 0;
+    this->pos_start         = pos_start;
+    this->pos_end           = pos_end;
+    this->via_point_idx     = 0;
+    this->via_point_step    = 0;
+    this->via_point_time    = 0;
 
 
     /**********************************
-     *   END-EFFECTOR PATH MOTION
+     *   END-EFFECTOR POSITION
      **********************************/
     float path_length       = 0;
     float path_travel_time  = 0;
-    float path_time_step    = 0;
 
     path_length = get_path_length(&pos_start, &pos_end);
     if (path_length != 0) {
         path_travel_time = get_best_effort_time(path_length, MAX_LINEAR_VEL, MAX_LINEAR_ACC);
         path_travel_time = std::max(pos_end.t, path_travel_time);   // override if input value is greater
-        path_time_step = PATH_STEP_DISTANCE / path_length;
     }
 
-
     /**********************************
-     *   END-EFFECTOR AXIS ROTATION
+     *   END-EFFECTOR ROTATION
      **********************************/
     float rot_length        = 0;
     float rot_travel_time   = 0;
-    float rot_time_step     = 0;
 
     rot_length = abs(pos_end.k - pos_start.k);
     if (rot_length != 0) {
         rot_travel_time = get_best_effort_time(rot_length, MAX_ROTATION_VEL, MAX_ROTATION_ACC);
         rot_travel_time = std::max(pos_end.t, rot_travel_time);     // override if input value is greater
-        rot_time_step = ROTATION_STEP_DISTANCE / rot_length;
     }
 
+
     // travel time that satisfies vel and acc constraints
-    travel_time = std::max(path_travel_time, rot_travel_time);
-    if (travel_time == 0) {
+    this->travel_time = std::max(path_travel_time, rot_travel_time);
+    if (this->travel_time == 0) {
         return false;
     }
 
@@ -73,16 +70,9 @@ bool TrajectoryGenerator::set_trajectory_ptp(position_t pos_start, position_t po
     // a0 = 0;
     // a1 = 0;
     // a2 = 0;
-    this->a3 =   10 / pow(travel_time, 3);
-    this->a4 =  -15 / pow(travel_time, 4);
-    this->a5 =    6 / pow(travel_time, 5);
-
-
-    // step increase
-    time_step = std::min(path_time_step, rot_time_step);
-    if (time_step <= 0) {
-        time_step = std::max(path_time_step, rot_time_step);    // in case one of the two is zero
-    }
+    this->a3 =   10 / pow(this->travel_time, 3);
+    this->a4 =  -15 / pow(this->travel_time, 4);
+    this->a5 =    6 / pow(this->travel_time, 5);
 
     return true;    // trajectory is valid
 }
@@ -99,31 +89,31 @@ bool TrajectoryGenerator::set_trajectory_ptp(position_t pos_start, position_t po
  */
 bool TrajectoryGenerator::get_next_via_point(position_t *pos)
 {
-    if (time_step_idx > 1) {
+    // mapping position index with quintic polynomial profile
+    // a0 = 0; a1 = 0; a2 = 0;
+    this->via_point_idx  = a3 * pow(this->via_point_time, 3);
+    this->via_point_idx += a4 * pow(this->via_point_time, 4);
+    this->via_point_idx += a5 * pow(this->via_point_time, 5);
+
+    if (this->via_point_idx > 1) {
         return false;           // end point reached
     }
-    
-    pos->t = travel_time * time_step_idx;   // via point time stamp
 
-    float via_point_idx;                    // remapping index with quintic polynomial
-    // a0 = 0; a1 = 0; a2 = 0;
-    via_point_idx = a3 * pow(pos->t, 3) + a4 * pow(pos->t, 4) + a5 * pow(pos->t, 5);
-    
-    // this is to avoid floating point errors when adding the time step
-    if ((time_step_idx + time_step) >= 1) {
-        pos->t = travel_time;
-        via_point_idx = 1;
+    if ((2*this->via_point_idx - this->via_point_step) > 1) {     // end point is almost reached
+        this-> via_point_idx    = 1;
+        this-> via_point_time   = this->travel_time;
     }
 
-
     // mapping end-effector position
-    pos->x = ((1 - via_point_idx) * pos_start.x) + (via_point_idx * pos_end.x);
-    pos->y = ((1 - via_point_idx) * pos_start.y) + (via_point_idx * pos_end.y);
-    pos->z = ((1 - via_point_idx) * pos_start.z) + (via_point_idx * pos_end.z);
-    pos->k = ((1 - via_point_idx) * pos_start.k) + (via_point_idx * pos_end.k);
+    pos->x = ((1 - this->via_point_idx) * pos_start.x) + (this->via_point_idx * pos_end.x);
+    pos->y = ((1 - this->via_point_idx) * pos_start.y) + (this->via_point_idx * pos_end.y);
+    pos->z = ((1 - this->via_point_idx) * pos_start.z) + (this->via_point_idx * pos_end.z);
+    pos->k = ((1 - this->via_point_idx) * pos_start.k) + (this->via_point_idx * pos_end.k);
+    pos->t = via_point_time;   // via point time stamp
 
-    // update step, value [0, 1]
-    time_step_idx += time_step;
+    // update attribute
+    this->via_point_time += VIA_POINTS_TIME_STEP;
+    this->via_point_step = this->via_point_idx;     // save previous via_point_idx
     return true;
 }
 

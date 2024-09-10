@@ -74,7 +74,7 @@ int main()
     pos_end.y = 100;
     pos_end.z = 100;
     pos_end.k = -2.0;
-    pos_end.t = 4.3;
+    pos_end.t = -1;
 
     // Set trajectory
     rc = tg.set_trajectory_ptp(pos_start, pos_end);

@@ -4,6 +4,7 @@
 
 #include "include/inverse_geometry.h"
 #include "include/trajectory_generator.h"
+#include "include/buffer.h"
 
 
 class DeltaRobot
@@ -14,8 +15,6 @@ public:
 private:
     TrajectoryGenerator     tg;
     InverseGeometry         ig;
-
-    
 
 };
 
