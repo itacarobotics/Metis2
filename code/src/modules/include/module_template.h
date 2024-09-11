@@ -1,5 +1,5 @@
-#ifndef _TRAJECTORY_GENERATOR_H_
-#define _TRAJECTORY_GENERATOR_H_
+#ifndef _MODULE_TEMPLATE_H_
+#define _MODULE_TEMPLATE_H_
 
 
 /*
@@ -56,4 +56,4 @@
 
 
 
-#endif // _TRAJECTORY_GENERATOR_H_
+#endif // _MODULE_TEMPLATE_H_

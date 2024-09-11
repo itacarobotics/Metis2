@@ -1,30 +1,59 @@
-#ifndef INVERSE_GEOMETRY_H
-#define INVERSE_GEOMETRY_H
-
-#include "math.h"
-#include "data_t.h"
-#include "configuration.h"
+#ifndef _INVERSE_GEOMETRY_H_
+#define _INVERSE_GEOMETRY_H_
 
 
-// some math constants used in this class
-#define TAN30       0.57735
-#define SIN120      0.86603
-#define COS120      -0.5
-#define SIN240      -0.86603
-#define COS240      -0.5
+/*
+ * @brief Example template.
+ *
+ * See implementation file for information about this module.
+ *
+ * MIT License
+ * 
+ * Copyright (c) 2024 Federico Osti
+ * 
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ * 
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ * 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ */
 
 
-class InverseGeometry
-{
-public:
-    InverseGeometry();
-    bool    inverse_geometry(position_t *pos, joints_t *joints);
 
-private:
-    bool    compute_angle(position_t pos_i, float *q_i);
-};
+////////////////////////////////////////////////////////////////////////////////
+// Common macros
+////////////////////////////////////////////////////////////////////////////////
 
 
-#include "../inverse_geometry.cpp"
 
-#endif  // INVERSE_GEOMETRY_H
+////////////////////////////////////////////////////////////////////////////////
+// Type definitions
+////////////////////////////////////////////////////////////////////////////////
+
+
+    
+////////////////////////////////////////////////////////////////////////////////
+// Public (global) externs
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+// Public (global) function declarations
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+#endif // _INVERSE_GEOMETRY_H_

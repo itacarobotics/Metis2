@@ -6,10 +6,10 @@ Buffer<data_t>::Buffer(int32_t buffer_size)
     this->buffer_size = buffer_size;
     data_t *data = new data_t[buffer_size];
 
-    head_idx = 0;
-    tail_idx = 0;
-    buffer_length = 0;
-    mutex = true;
+    head_idx        = 0;
+    tail_idx        = 0;
+    buffer_length   = 0;
+    mutex           = true;
     return;
 }
 
@@ -80,8 +80,8 @@ bool Buffer<data_t>::is_empty(void)
 template <typename data_t>
 void Buffer<data_t>::reset(void)
 {
-    buffer_length = 0;
-    head_idx = 0;
-    tail_idx = 0;
+    buffer_length   = 0;
+    head_idx        = 0;
+    tail_idx        = 0;
     return;
 }

@@ -23,7 +23,7 @@ TrajectoryGenerator::~TrajectoryGenerator()
  *  Sets the parameters needed to make a point to point trajectory with a quintic polynomial
  *  velocity profile.
  */
-bool TrajectoryGenerator::set_ptp_task(position_t pos_start, position_t pos_end)
+bool TrajectoryGenerator::set_trajectory_ptp(position_t pos_start, position_t pos_end)
 {
     bool rc;
 

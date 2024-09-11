@@ -41,7 +41,7 @@ void DeltaRobot::set_calibration_status(bool status)
  *  @return true if position is feasable, false otherwise.
  *  
  */
-bool DeltaRobot::set_motion_task(position_t pos_goal)
+bool DeltaRobot::set_trajectory_ptp(position_t pos_goal)
 {
     bool rc;
 
@@ -49,7 +49,7 @@ bool DeltaRobot::set_motion_task(position_t pos_goal)
         return false;
     }
 
-    rc = tg.set_ptp_task(this->pos_current, pos_goal);
+    rc = tg.set_trajectory_ptp(this->pos_current, pos_goal);
     return rc;
 }
 
@@ -66,7 +66,7 @@ robot_status_t DeltaRobot::get_robot_status(void)
  *  @return true if position is feasable, false otherwise.
  *  
  */
-bool DeltaRobot::get_motion_cmd(position_t *pos, joints_t *q)
+bool DeltaRobot::get_joints_via_point(position_t *pos, joints_t *q)
 {
     bool rc;
     
@@ -83,4 +83,3 @@ bool DeltaRobot::get_motion_cmd(position_t *pos, joints_t *q)
 
     return true;
 }
-

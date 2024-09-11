@@ -1,5 +1,5 @@
-#ifndef _TRAJECTORY_GENERATOR_H_
-#define _TRAJECTORY_GENERATOR_H_
+#ifndef _GRIPPER_DRIVER_H_
+#define _GRIPPER_DRIVER_H_
 
 
 /*
@@ -56,4 +56,4 @@
 
 
 
-#endif // _TRAJECTORY_GENERATOR_H_
+#endif // _GRIPPER_DRIVER_H_

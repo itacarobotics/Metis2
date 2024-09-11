@@ -1,5 +1,5 @@
-#ifndef _TRAJECTORY_GENERATOR_H_
-#define _TRAJECTORY_GENERATOR_H_
+#ifndef _MOTION_PLANNER_H_
+#define _MOTION_PLANNER_H_
 
 
 /*
@@ -30,6 +30,12 @@
  * SOFTWARE.
  */
 
+#include <stdint.h>
+#include <stdlib.h>
+
+#include "buffer.h"
+#include "gcode.h"
+#include "robot.h"
 
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -42,7 +48,6 @@
 // Type definitions
 ////////////////////////////////////////////////////////////////////////////////
 
-
     
 ////////////////////////////////////////////////////////////////////////////////
 // Public (global) externs
@@ -54,6 +59,7 @@
 // Public (global) function declarations
 ////////////////////////////////////////////////////////////////////////////////
 
+enum rc_status_t motion_planner_run(void);
 
 
-#endif // _TRAJECTORY_GENERATOR_H_
+#endif // _MOTION_PLANNER_H_

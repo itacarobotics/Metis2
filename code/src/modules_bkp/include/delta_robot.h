@@ -13,15 +13,16 @@ public:
     DeltaRobot();
     void                set_robot_status(robot_status_t status);
     void                set_calibration_status(bool status);
-    bool                set_motion_task(position_t pos_goal);
+    bool                set_trajectory_ptp(position_t pos_goal);
+    void                set_pos_current(position_t pos);
 
     robot_status_t      get_robot_status(void);
-    bool                get_motion_cmd(position_t *pos, joints_t *q);
+    bool                get_joints_via_point(position_t *pos, joints_t *q);
 
 private:
     robot_status_t      robot_status;
     bool                is_robot_calibrated;
-    
+
     TrajectoryGenerator tg;
     InverseGeometry     ig;
 
