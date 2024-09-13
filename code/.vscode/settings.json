@@ -1,9 +1,5 @@
 {
     "files.associations": {
-        "inverse_geometry.h": "c",
-        "robot.h": "c",
-        "gcode.h": "c",
-        "trajectory_generator.h": "c",
-        "buffer.h": "c"
+        "inverse_geometry.h": "c"
     }
 }

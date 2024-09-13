@@ -8,18 +8,13 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/ostifede02/itacarobotics/Metis2/code/src/buffer/buffer.c" "CMakeFiles/main.dir/src/buffer/buffer.c.o" "gcc" "CMakeFiles/main.dir/src/buffer/buffer.c.o.d"
-  "/home/ostifede02/itacarobotics/Metis2/code/src/comunication/comunication.c" "CMakeFiles/main.dir/src/comunication/comunication.c.o" "gcc" "CMakeFiles/main.dir/src/comunication/comunication.c.o.d"
-  "/home/ostifede02/itacarobotics/Metis2/code/src/gcode/gcode.c" "CMakeFiles/main.dir/src/gcode/gcode.c.o" "gcc" "CMakeFiles/main.dir/src/gcode/gcode.c.o.d"
-  "/home/ostifede02/itacarobotics/Metis2/code/src/gripper_driver/gripper_driver.c" "CMakeFiles/main.dir/src/gripper_driver/gripper_driver.c.o" "gcc" "CMakeFiles/main.dir/src/gripper_driver/gripper_driver.c.o.d"
-  "/home/ostifede02/itacarobotics/Metis2/code/src/inverse_geometry/inverse_geometry.c" "CMakeFiles/main.dir/src/inverse_geometry/inverse_geometry.c.o" "gcc" "CMakeFiles/main.dir/src/inverse_geometry/inverse_geometry.c.o.d"
-  "/home/ostifede02/itacarobotics/Metis2/code/src/main.c" "CMakeFiles/main.dir/src/main.c.o" "gcc" "CMakeFiles/main.dir/src/main.c.o.d"
-  "/home/ostifede02/itacarobotics/Metis2/code/src/module_template/module_template.c" "CMakeFiles/main.dir/src/module_template/module_template.c.o" "gcc" "CMakeFiles/main.dir/src/module_template/module_template.c.o.d"
-  "/home/ostifede02/itacarobotics/Metis2/code/src/motion_planner/motion_planner.c" "CMakeFiles/main.dir/src/motion_planner/motion_planner.c.o" "gcc" "CMakeFiles/main.dir/src/motion_planner/motion_planner.c.o.d"
-  "/home/ostifede02/itacarobotics/Metis2/code/src/motor_driver/motor_driver.c" "CMakeFiles/main.dir/src/motor_driver/motor_driver.c.o" "gcc" "CMakeFiles/main.dir/src/motor_driver/motor_driver.c.o.d"
-  "/home/ostifede02/itacarobotics/Metis2/code/src/robot/robot.c" "CMakeFiles/main.dir/src/robot/robot.c.o" "gcc" "CMakeFiles/main.dir/src/robot/robot.c.o.d"
-  "/home/ostifede02/itacarobotics/Metis2/code/src/task_manager/task_manager.c" "CMakeFiles/main.dir/src/task_manager/task_manager.c.o" "gcc" "CMakeFiles/main.dir/src/task_manager/task_manager.c.o.d"
-  "/home/ostifede02/itacarobotics/Metis2/code/src/trajectory_generator/trajectory_generator.c" "CMakeFiles/main.dir/src/trajectory_generator/trajectory_generator.c.o" "gcc" "CMakeFiles/main.dir/src/trajectory_generator/trajectory_generator.c.o.d"
+  "/home/ostifede02/itacarobotics/Metis2/code/src/app/app_main.c" "CMakeFiles/main.dir/src/app/app_main.c.o" "gcc" "CMakeFiles/main.dir/src/app/app_main.c.o.d"
+  "/home/ostifede02/itacarobotics/Metis2/code/src/modules/buffer/buffer.c" "CMakeFiles/main.dir/src/modules/buffer/buffer.c.o" "gcc" "CMakeFiles/main.dir/src/modules/buffer/buffer.c.o.d"
+  "/home/ostifede02/itacarobotics/Metis2/code/src/modules/gcode/gcode.c" "CMakeFiles/main.dir/src/modules/gcode/gcode.c.o" "gcc" "CMakeFiles/main.dir/src/modules/gcode/gcode.c.o.d"
+  "/home/ostifede02/itacarobotics/Metis2/code/src/modules/inverse_geometry/inverse_geometry.c" "CMakeFiles/main.dir/src/modules/inverse_geometry/inverse_geometry.c.o" "gcc" "CMakeFiles/main.dir/src/modules/inverse_geometry/inverse_geometry.c.o.d"
+  "/home/ostifede02/itacarobotics/Metis2/code/src/modules/motion_planner/motion_planner.c" "CMakeFiles/main.dir/src/modules/motion_planner/motion_planner.c.o" "gcc" "CMakeFiles/main.dir/src/modules/motion_planner/motion_planner.c.o.d"
+  "/home/ostifede02/itacarobotics/Metis2/code/src/modules/robot/robot.c" "CMakeFiles/main.dir/src/modules/robot/robot.c.o" "gcc" "CMakeFiles/main.dir/src/modules/robot/robot.c.o.d"
+  "/home/ostifede02/itacarobotics/Metis2/code/src/modules/trajectory_generator/trajectory_generator.c" "CMakeFiles/main.dir/src/modules/trajectory_generator/trajectory_generator.c.o" "gcc" "CMakeFiles/main.dir/src/modules/trajectory_generator/trajectory_generator.c.o.d"
   )
 
 # Targets to which this target links.

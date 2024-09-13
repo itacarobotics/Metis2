@@ -5,43 +5,35 @@ project(Metis2)
 set(CMAKE_C_STANDARD 11)
 set(CMAKE_C_STANDARD_REQUIRED True)
 
-# Set the source directory
-set(SRC_DIR ${CMAKE_SOURCE_DIR}/src)
+# Set the modules directory
+set(MOD_DIR ${CMAKE_SOURCE_DIR}/src/modules)
+
+# Set the modules directory
+set(APP_DIR ${CMAKE_SOURCE_DIR}/src/app)
+
 
 # Include directories
 include_directories(
-    ${SRC_DIR}/buffer
-    ${SRC_DIR}/comunication
-    ${SRC_DIR}/gcode
-    ${SRC_DIR}/gripper_driver
-    ${SRC_DIR}/inverse_geometry
-    ${SRC_DIR}/module_template
-    ${SRC_DIR}/motion_planner
-    ${SRC_DIR}/motor_driver
-    ${SRC_DIR}/robot
-    ${SRC_DIR}/task_manager
-    ${SRC_DIR}/trajectory_generator
+    ${MOD_DIR}/include
 )
 
 # Source files
 set(SOURCES
-    ${SRC_DIR}/buffer/buffer.c
-    ${SRC_DIR}/comunication/comunication.c
-    ${SRC_DIR}/gcode/gcode.c
-    ${SRC_DIR}/gripper_driver/gripper_driver.c
-    ${SRC_DIR}/inverse_geometry/inverse_geometry.c
-    ${SRC_DIR}/module_template/module_template.c
-    ${SRC_DIR}/motion_planner/motion_planner.c
-    ${SRC_DIR}/motor_driver/motor_driver.c
-    ${SRC_DIR}/robot/robot.c
-    ${SRC_DIR}/task_manager/task_manager.c
-    ${SRC_DIR}/trajectory_generator/trajectory_generator.c
+    ${MOD_DIR}/buffer/buffer.c
+    # ${MOD_DIR}/comunication/comunication.c
+    ${MOD_DIR}/gcode/gcode.c
+    # ${MOD_DIR}/gripper_driver/gripper_driver.c
+    ${MOD_DIR}/inverse_geometry/inverse_geometry.c
+    ${MOD_DIR}/motion_planner/motion_planner.c
+    # ${MOD_DIR}/motor_driver/motor_driver.c
+    ${MOD_DIR}/robot/robot.c
+    ${MOD_DIR}/trajectory_generator/trajectory_generator.c
 )
 
 # Add the executable
 add_executable(main 
     ${SOURCES}
-    ${SRC_DIR}/main.c
+    ${APP_DIR}/app_main.c
 )
 target_link_libraries(main m)
 
@@ -49,10 +41,11 @@ target_link_libraries(main m)
 
 # ## tests
 # # Set the tests directory
-# set(TESTS_DIR ${CMAKE_SOURCE_DIR}/tests)
+set(TESTS_DIR ${CMAKE_SOURCE_DIR}/tests)
 
-# add_executable(ig_test 
-#     ${SOURCES}
-#     ${TESTS_DIR}/ig_test.c
-# )
-# target_link_libraries(ig_test m)
+# Add the executable
+add_executable(buffer_test 
+    ${SOURCES}
+    ${TESTS_DIR}/buffer_test.c
+)
+target_link_libraries(buffer_test m)

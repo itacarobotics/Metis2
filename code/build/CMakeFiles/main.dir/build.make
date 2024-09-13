@@ -69,207 +69,127 @@ include CMakeFiles/main.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/main.dir/flags.make
 
-CMakeFiles/main.dir/src/buffer/buffer.c.o: CMakeFiles/main.dir/flags.make
-CMakeFiles/main.dir/src/buffer/buffer.c.o: /home/ostifede02/itacarobotics/Metis2/code/src/buffer/buffer.c
-CMakeFiles/main.dir/src/buffer/buffer.c.o: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ostifede02/itacarobotics/Metis2/code/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/main.dir/src/buffer/buffer.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/main.dir/src/buffer/buffer.c.o -MF CMakeFiles/main.dir/src/buffer/buffer.c.o.d -o CMakeFiles/main.dir/src/buffer/buffer.c.o -c /home/ostifede02/itacarobotics/Metis2/code/src/buffer/buffer.c
+CMakeFiles/main.dir/src/modules/buffer/buffer.c.o: CMakeFiles/main.dir/flags.make
+CMakeFiles/main.dir/src/modules/buffer/buffer.c.o: /home/ostifede02/itacarobotics/Metis2/code/src/modules/buffer/buffer.c
+CMakeFiles/main.dir/src/modules/buffer/buffer.c.o: CMakeFiles/main.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ostifede02/itacarobotics/Metis2/code/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/main.dir/src/modules/buffer/buffer.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/main.dir/src/modules/buffer/buffer.c.o -MF CMakeFiles/main.dir/src/modules/buffer/buffer.c.o.d -o CMakeFiles/main.dir/src/modules/buffer/buffer.c.o -c /home/ostifede02/itacarobotics/Metis2/code/src/modules/buffer/buffer.c
 
-CMakeFiles/main.dir/src/buffer/buffer.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/main.dir/src/buffer/buffer.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ostifede02/itacarobotics/Metis2/code/src/buffer/buffer.c > CMakeFiles/main.dir/src/buffer/buffer.c.i
+CMakeFiles/main.dir/src/modules/buffer/buffer.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/main.dir/src/modules/buffer/buffer.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ostifede02/itacarobotics/Metis2/code/src/modules/buffer/buffer.c > CMakeFiles/main.dir/src/modules/buffer/buffer.c.i
 
-CMakeFiles/main.dir/src/buffer/buffer.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/main.dir/src/buffer/buffer.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ostifede02/itacarobotics/Metis2/code/src/buffer/buffer.c -o CMakeFiles/main.dir/src/buffer/buffer.c.s
+CMakeFiles/main.dir/src/modules/buffer/buffer.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/main.dir/src/modules/buffer/buffer.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ostifede02/itacarobotics/Metis2/code/src/modules/buffer/buffer.c -o CMakeFiles/main.dir/src/modules/buffer/buffer.c.s
 
-CMakeFiles/main.dir/src/comunication/comunication.c.o: CMakeFiles/main.dir/flags.make
-CMakeFiles/main.dir/src/comunication/comunication.c.o: /home/ostifede02/itacarobotics/Metis2/code/src/comunication/comunication.c
-CMakeFiles/main.dir/src/comunication/comunication.c.o: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ostifede02/itacarobotics/Metis2/code/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/main.dir/src/comunication/comunication.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/main.dir/src/comunication/comunication.c.o -MF CMakeFiles/main.dir/src/comunication/comunication.c.o.d -o CMakeFiles/main.dir/src/comunication/comunication.c.o -c /home/ostifede02/itacarobotics/Metis2/code/src/comunication/comunication.c
+CMakeFiles/main.dir/src/modules/gcode/gcode.c.o: CMakeFiles/main.dir/flags.make
+CMakeFiles/main.dir/src/modules/gcode/gcode.c.o: /home/ostifede02/itacarobotics/Metis2/code/src/modules/gcode/gcode.c
+CMakeFiles/main.dir/src/modules/gcode/gcode.c.o: CMakeFiles/main.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ostifede02/itacarobotics/Metis2/code/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/main.dir/src/modules/gcode/gcode.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/main.dir/src/modules/gcode/gcode.c.o -MF CMakeFiles/main.dir/src/modules/gcode/gcode.c.o.d -o CMakeFiles/main.dir/src/modules/gcode/gcode.c.o -c /home/ostifede02/itacarobotics/Metis2/code/src/modules/gcode/gcode.c
 
-CMakeFiles/main.dir/src/comunication/comunication.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/main.dir/src/comunication/comunication.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ostifede02/itacarobotics/Metis2/code/src/comunication/comunication.c > CMakeFiles/main.dir/src/comunication/comunication.c.i
+CMakeFiles/main.dir/src/modules/gcode/gcode.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/main.dir/src/modules/gcode/gcode.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ostifede02/itacarobotics/Metis2/code/src/modules/gcode/gcode.c > CMakeFiles/main.dir/src/modules/gcode/gcode.c.i
 
-CMakeFiles/main.dir/src/comunication/comunication.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/main.dir/src/comunication/comunication.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ostifede02/itacarobotics/Metis2/code/src/comunication/comunication.c -o CMakeFiles/main.dir/src/comunication/comunication.c.s
+CMakeFiles/main.dir/src/modules/gcode/gcode.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/main.dir/src/modules/gcode/gcode.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ostifede02/itacarobotics/Metis2/code/src/modules/gcode/gcode.c -o CMakeFiles/main.dir/src/modules/gcode/gcode.c.s
 
-CMakeFiles/main.dir/src/gcode/gcode.c.o: CMakeFiles/main.dir/flags.make
-CMakeFiles/main.dir/src/gcode/gcode.c.o: /home/ostifede02/itacarobotics/Metis2/code/src/gcode/gcode.c
-CMakeFiles/main.dir/src/gcode/gcode.c.o: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ostifede02/itacarobotics/Metis2/code/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/main.dir/src/gcode/gcode.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/main.dir/src/gcode/gcode.c.o -MF CMakeFiles/main.dir/src/gcode/gcode.c.o.d -o CMakeFiles/main.dir/src/gcode/gcode.c.o -c /home/ostifede02/itacarobotics/Metis2/code/src/gcode/gcode.c
+CMakeFiles/main.dir/src/modules/inverse_geometry/inverse_geometry.c.o: CMakeFiles/main.dir/flags.make
+CMakeFiles/main.dir/src/modules/inverse_geometry/inverse_geometry.c.o: /home/ostifede02/itacarobotics/Metis2/code/src/modules/inverse_geometry/inverse_geometry.c
+CMakeFiles/main.dir/src/modules/inverse_geometry/inverse_geometry.c.o: CMakeFiles/main.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ostifede02/itacarobotics/Metis2/code/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/main.dir/src/modules/inverse_geometry/inverse_geometry.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/main.dir/src/modules/inverse_geometry/inverse_geometry.c.o -MF CMakeFiles/main.dir/src/modules/inverse_geometry/inverse_geometry.c.o.d -o CMakeFiles/main.dir/src/modules/inverse_geometry/inverse_geometry.c.o -c /home/ostifede02/itacarobotics/Metis2/code/src/modules/inverse_geometry/inverse_geometry.c
 
-CMakeFiles/main.dir/src/gcode/gcode.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/main.dir/src/gcode/gcode.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ostifede02/itacarobotics/Metis2/code/src/gcode/gcode.c > CMakeFiles/main.dir/src/gcode/gcode.c.i
+CMakeFiles/main.dir/src/modules/inverse_geometry/inverse_geometry.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/main.dir/src/modules/inverse_geometry/inverse_geometry.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ostifede02/itacarobotics/Metis2/code/src/modules/inverse_geometry/inverse_geometry.c > CMakeFiles/main.dir/src/modules/inverse_geometry/inverse_geometry.c.i
 
-CMakeFiles/main.dir/src/gcode/gcode.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/main.dir/src/gcode/gcode.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ostifede02/itacarobotics/Metis2/code/src/gcode/gcode.c -o CMakeFiles/main.dir/src/gcode/gcode.c.s
+CMakeFiles/main.dir/src/modules/inverse_geometry/inverse_geometry.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/main.dir/src/modules/inverse_geometry/inverse_geometry.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ostifede02/itacarobotics/Metis2/code/src/modules/inverse_geometry/inverse_geometry.c -o CMakeFiles/main.dir/src/modules/inverse_geometry/inverse_geometry.c.s
 
-CMakeFiles/main.dir/src/gripper_driver/gripper_driver.c.o: CMakeFiles/main.dir/flags.make
-CMakeFiles/main.dir/src/gripper_driver/gripper_driver.c.o: /home/ostifede02/itacarobotics/Metis2/code/src/gripper_driver/gripper_driver.c
-CMakeFiles/main.dir/src/gripper_driver/gripper_driver.c.o: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ostifede02/itacarobotics/Metis2/code/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/main.dir/src/gripper_driver/gripper_driver.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/main.dir/src/gripper_driver/gripper_driver.c.o -MF CMakeFiles/main.dir/src/gripper_driver/gripper_driver.c.o.d -o CMakeFiles/main.dir/src/gripper_driver/gripper_driver.c.o -c /home/ostifede02/itacarobotics/Metis2/code/src/gripper_driver/gripper_driver.c
+CMakeFiles/main.dir/src/modules/motion_planner/motion_planner.c.o: CMakeFiles/main.dir/flags.make
+CMakeFiles/main.dir/src/modules/motion_planner/motion_planner.c.o: /home/ostifede02/itacarobotics/Metis2/code/src/modules/motion_planner/motion_planner.c
+CMakeFiles/main.dir/src/modules/motion_planner/motion_planner.c.o: CMakeFiles/main.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ostifede02/itacarobotics/Metis2/code/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/main.dir/src/modules/motion_planner/motion_planner.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/main.dir/src/modules/motion_planner/motion_planner.c.o -MF CMakeFiles/main.dir/src/modules/motion_planner/motion_planner.c.o.d -o CMakeFiles/main.dir/src/modules/motion_planner/motion_planner.c.o -c /home/ostifede02/itacarobotics/Metis2/code/src/modules/motion_planner/motion_planner.c
 
-CMakeFiles/main.dir/src/gripper_driver/gripper_driver.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/main.dir/src/gripper_driver/gripper_driver.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ostifede02/itacarobotics/Metis2/code/src/gripper_driver/gripper_driver.c > CMakeFiles/main.dir/src/gripper_driver/gripper_driver.c.i
+CMakeFiles/main.dir/src/modules/motion_planner/motion_planner.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/main.dir/src/modules/motion_planner/motion_planner.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ostifede02/itacarobotics/Metis2/code/src/modules/motion_planner/motion_planner.c > CMakeFiles/main.dir/src/modules/motion_planner/motion_planner.c.i
 
-CMakeFiles/main.dir/src/gripper_driver/gripper_driver.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/main.dir/src/gripper_driver/gripper_driver.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ostifede02/itacarobotics/Metis2/code/src/gripper_driver/gripper_driver.c -o CMakeFiles/main.dir/src/gripper_driver/gripper_driver.c.s
+CMakeFiles/main.dir/src/modules/motion_planner/motion_planner.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/main.dir/src/modules/motion_planner/motion_planner.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ostifede02/itacarobotics/Metis2/code/src/modules/motion_planner/motion_planner.c -o CMakeFiles/main.dir/src/modules/motion_planner/motion_planner.c.s
 
-CMakeFiles/main.dir/src/inverse_geometry/inverse_geometry.c.o: CMakeFiles/main.dir/flags.make
-CMakeFiles/main.dir/src/inverse_geometry/inverse_geometry.c.o: /home/ostifede02/itacarobotics/Metis2/code/src/inverse_geometry/inverse_geometry.c
-CMakeFiles/main.dir/src/inverse_geometry/inverse_geometry.c.o: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ostifede02/itacarobotics/Metis2/code/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/main.dir/src/inverse_geometry/inverse_geometry.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/main.dir/src/inverse_geometry/inverse_geometry.c.o -MF CMakeFiles/main.dir/src/inverse_geometry/inverse_geometry.c.o.d -o CMakeFiles/main.dir/src/inverse_geometry/inverse_geometry.c.o -c /home/ostifede02/itacarobotics/Metis2/code/src/inverse_geometry/inverse_geometry.c
+CMakeFiles/main.dir/src/modules/robot/robot.c.o: CMakeFiles/main.dir/flags.make
+CMakeFiles/main.dir/src/modules/robot/robot.c.o: /home/ostifede02/itacarobotics/Metis2/code/src/modules/robot/robot.c
+CMakeFiles/main.dir/src/modules/robot/robot.c.o: CMakeFiles/main.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ostifede02/itacarobotics/Metis2/code/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/main.dir/src/modules/robot/robot.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/main.dir/src/modules/robot/robot.c.o -MF CMakeFiles/main.dir/src/modules/robot/robot.c.o.d -o CMakeFiles/main.dir/src/modules/robot/robot.c.o -c /home/ostifede02/itacarobotics/Metis2/code/src/modules/robot/robot.c
 
-CMakeFiles/main.dir/src/inverse_geometry/inverse_geometry.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/main.dir/src/inverse_geometry/inverse_geometry.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ostifede02/itacarobotics/Metis2/code/src/inverse_geometry/inverse_geometry.c > CMakeFiles/main.dir/src/inverse_geometry/inverse_geometry.c.i
+CMakeFiles/main.dir/src/modules/robot/robot.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/main.dir/src/modules/robot/robot.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ostifede02/itacarobotics/Metis2/code/src/modules/robot/robot.c > CMakeFiles/main.dir/src/modules/robot/robot.c.i
 
-CMakeFiles/main.dir/src/inverse_geometry/inverse_geometry.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/main.dir/src/inverse_geometry/inverse_geometry.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ostifede02/itacarobotics/Metis2/code/src/inverse_geometry/inverse_geometry.c -o CMakeFiles/main.dir/src/inverse_geometry/inverse_geometry.c.s
+CMakeFiles/main.dir/src/modules/robot/robot.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/main.dir/src/modules/robot/robot.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ostifede02/itacarobotics/Metis2/code/src/modules/robot/robot.c -o CMakeFiles/main.dir/src/modules/robot/robot.c.s
 
-CMakeFiles/main.dir/src/module_template/module_template.c.o: CMakeFiles/main.dir/flags.make
-CMakeFiles/main.dir/src/module_template/module_template.c.o: /home/ostifede02/itacarobotics/Metis2/code/src/module_template/module_template.c
-CMakeFiles/main.dir/src/module_template/module_template.c.o: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ostifede02/itacarobotics/Metis2/code/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/main.dir/src/module_template/module_template.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/main.dir/src/module_template/module_template.c.o -MF CMakeFiles/main.dir/src/module_template/module_template.c.o.d -o CMakeFiles/main.dir/src/module_template/module_template.c.o -c /home/ostifede02/itacarobotics/Metis2/code/src/module_template/module_template.c
+CMakeFiles/main.dir/src/modules/trajectory_generator/trajectory_generator.c.o: CMakeFiles/main.dir/flags.make
+CMakeFiles/main.dir/src/modules/trajectory_generator/trajectory_generator.c.o: /home/ostifede02/itacarobotics/Metis2/code/src/modules/trajectory_generator/trajectory_generator.c
+CMakeFiles/main.dir/src/modules/trajectory_generator/trajectory_generator.c.o: CMakeFiles/main.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ostifede02/itacarobotics/Metis2/code/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/main.dir/src/modules/trajectory_generator/trajectory_generator.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/main.dir/src/modules/trajectory_generator/trajectory_generator.c.o -MF CMakeFiles/main.dir/src/modules/trajectory_generator/trajectory_generator.c.o.d -o CMakeFiles/main.dir/src/modules/trajectory_generator/trajectory_generator.c.o -c /home/ostifede02/itacarobotics/Metis2/code/src/modules/trajectory_generator/trajectory_generator.c
 
-CMakeFiles/main.dir/src/module_template/module_template.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/main.dir/src/module_template/module_template.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ostifede02/itacarobotics/Metis2/code/src/module_template/module_template.c > CMakeFiles/main.dir/src/module_template/module_template.c.i
+CMakeFiles/main.dir/src/modules/trajectory_generator/trajectory_generator.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/main.dir/src/modules/trajectory_generator/trajectory_generator.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ostifede02/itacarobotics/Metis2/code/src/modules/trajectory_generator/trajectory_generator.c > CMakeFiles/main.dir/src/modules/trajectory_generator/trajectory_generator.c.i
 
-CMakeFiles/main.dir/src/module_template/module_template.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/main.dir/src/module_template/module_template.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ostifede02/itacarobotics/Metis2/code/src/module_template/module_template.c -o CMakeFiles/main.dir/src/module_template/module_template.c.s
+CMakeFiles/main.dir/src/modules/trajectory_generator/trajectory_generator.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/main.dir/src/modules/trajectory_generator/trajectory_generator.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ostifede02/itacarobotics/Metis2/code/src/modules/trajectory_generator/trajectory_generator.c -o CMakeFiles/main.dir/src/modules/trajectory_generator/trajectory_generator.c.s
 
-CMakeFiles/main.dir/src/motion_planner/motion_planner.c.o: CMakeFiles/main.dir/flags.make
-CMakeFiles/main.dir/src/motion_planner/motion_planner.c.o: /home/ostifede02/itacarobotics/Metis2/code/src/motion_planner/motion_planner.c
-CMakeFiles/main.dir/src/motion_planner/motion_planner.c.o: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ostifede02/itacarobotics/Metis2/code/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/main.dir/src/motion_planner/motion_planner.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/main.dir/src/motion_planner/motion_planner.c.o -MF CMakeFiles/main.dir/src/motion_planner/motion_planner.c.o.d -o CMakeFiles/main.dir/src/motion_planner/motion_planner.c.o -c /home/ostifede02/itacarobotics/Metis2/code/src/motion_planner/motion_planner.c
+CMakeFiles/main.dir/src/app/app_main.c.o: CMakeFiles/main.dir/flags.make
+CMakeFiles/main.dir/src/app/app_main.c.o: /home/ostifede02/itacarobotics/Metis2/code/src/app/app_main.c
+CMakeFiles/main.dir/src/app/app_main.c.o: CMakeFiles/main.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ostifede02/itacarobotics/Metis2/code/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/main.dir/src/app/app_main.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/main.dir/src/app/app_main.c.o -MF CMakeFiles/main.dir/src/app/app_main.c.o.d -o CMakeFiles/main.dir/src/app/app_main.c.o -c /home/ostifede02/itacarobotics/Metis2/code/src/app/app_main.c
 
-CMakeFiles/main.dir/src/motion_planner/motion_planner.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/main.dir/src/motion_planner/motion_planner.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ostifede02/itacarobotics/Metis2/code/src/motion_planner/motion_planner.c > CMakeFiles/main.dir/src/motion_planner/motion_planner.c.i
+CMakeFiles/main.dir/src/app/app_main.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/main.dir/src/app/app_main.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ostifede02/itacarobotics/Metis2/code/src/app/app_main.c > CMakeFiles/main.dir/src/app/app_main.c.i
 
-CMakeFiles/main.dir/src/motion_planner/motion_planner.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/main.dir/src/motion_planner/motion_planner.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ostifede02/itacarobotics/Metis2/code/src/motion_planner/motion_planner.c -o CMakeFiles/main.dir/src/motion_planner/motion_planner.c.s
-
-CMakeFiles/main.dir/src/motor_driver/motor_driver.c.o: CMakeFiles/main.dir/flags.make
-CMakeFiles/main.dir/src/motor_driver/motor_driver.c.o: /home/ostifede02/itacarobotics/Metis2/code/src/motor_driver/motor_driver.c
-CMakeFiles/main.dir/src/motor_driver/motor_driver.c.o: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ostifede02/itacarobotics/Metis2/code/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/main.dir/src/motor_driver/motor_driver.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/main.dir/src/motor_driver/motor_driver.c.o -MF CMakeFiles/main.dir/src/motor_driver/motor_driver.c.o.d -o CMakeFiles/main.dir/src/motor_driver/motor_driver.c.o -c /home/ostifede02/itacarobotics/Metis2/code/src/motor_driver/motor_driver.c
-
-CMakeFiles/main.dir/src/motor_driver/motor_driver.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/main.dir/src/motor_driver/motor_driver.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ostifede02/itacarobotics/Metis2/code/src/motor_driver/motor_driver.c > CMakeFiles/main.dir/src/motor_driver/motor_driver.c.i
-
-CMakeFiles/main.dir/src/motor_driver/motor_driver.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/main.dir/src/motor_driver/motor_driver.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ostifede02/itacarobotics/Metis2/code/src/motor_driver/motor_driver.c -o CMakeFiles/main.dir/src/motor_driver/motor_driver.c.s
-
-CMakeFiles/main.dir/src/robot/robot.c.o: CMakeFiles/main.dir/flags.make
-CMakeFiles/main.dir/src/robot/robot.c.o: /home/ostifede02/itacarobotics/Metis2/code/src/robot/robot.c
-CMakeFiles/main.dir/src/robot/robot.c.o: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ostifede02/itacarobotics/Metis2/code/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/main.dir/src/robot/robot.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/main.dir/src/robot/robot.c.o -MF CMakeFiles/main.dir/src/robot/robot.c.o.d -o CMakeFiles/main.dir/src/robot/robot.c.o -c /home/ostifede02/itacarobotics/Metis2/code/src/robot/robot.c
-
-CMakeFiles/main.dir/src/robot/robot.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/main.dir/src/robot/robot.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ostifede02/itacarobotics/Metis2/code/src/robot/robot.c > CMakeFiles/main.dir/src/robot/robot.c.i
-
-CMakeFiles/main.dir/src/robot/robot.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/main.dir/src/robot/robot.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ostifede02/itacarobotics/Metis2/code/src/robot/robot.c -o CMakeFiles/main.dir/src/robot/robot.c.s
-
-CMakeFiles/main.dir/src/task_manager/task_manager.c.o: CMakeFiles/main.dir/flags.make
-CMakeFiles/main.dir/src/task_manager/task_manager.c.o: /home/ostifede02/itacarobotics/Metis2/code/src/task_manager/task_manager.c
-CMakeFiles/main.dir/src/task_manager/task_manager.c.o: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ostifede02/itacarobotics/Metis2/code/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/main.dir/src/task_manager/task_manager.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/main.dir/src/task_manager/task_manager.c.o -MF CMakeFiles/main.dir/src/task_manager/task_manager.c.o.d -o CMakeFiles/main.dir/src/task_manager/task_manager.c.o -c /home/ostifede02/itacarobotics/Metis2/code/src/task_manager/task_manager.c
-
-CMakeFiles/main.dir/src/task_manager/task_manager.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/main.dir/src/task_manager/task_manager.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ostifede02/itacarobotics/Metis2/code/src/task_manager/task_manager.c > CMakeFiles/main.dir/src/task_manager/task_manager.c.i
-
-CMakeFiles/main.dir/src/task_manager/task_manager.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/main.dir/src/task_manager/task_manager.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ostifede02/itacarobotics/Metis2/code/src/task_manager/task_manager.c -o CMakeFiles/main.dir/src/task_manager/task_manager.c.s
-
-CMakeFiles/main.dir/src/trajectory_generator/trajectory_generator.c.o: CMakeFiles/main.dir/flags.make
-CMakeFiles/main.dir/src/trajectory_generator/trajectory_generator.c.o: /home/ostifede02/itacarobotics/Metis2/code/src/trajectory_generator/trajectory_generator.c
-CMakeFiles/main.dir/src/trajectory_generator/trajectory_generator.c.o: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ostifede02/itacarobotics/Metis2/code/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object CMakeFiles/main.dir/src/trajectory_generator/trajectory_generator.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/main.dir/src/trajectory_generator/trajectory_generator.c.o -MF CMakeFiles/main.dir/src/trajectory_generator/trajectory_generator.c.o.d -o CMakeFiles/main.dir/src/trajectory_generator/trajectory_generator.c.o -c /home/ostifede02/itacarobotics/Metis2/code/src/trajectory_generator/trajectory_generator.c
-
-CMakeFiles/main.dir/src/trajectory_generator/trajectory_generator.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/main.dir/src/trajectory_generator/trajectory_generator.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ostifede02/itacarobotics/Metis2/code/src/trajectory_generator/trajectory_generator.c > CMakeFiles/main.dir/src/trajectory_generator/trajectory_generator.c.i
-
-CMakeFiles/main.dir/src/trajectory_generator/trajectory_generator.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/main.dir/src/trajectory_generator/trajectory_generator.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ostifede02/itacarobotics/Metis2/code/src/trajectory_generator/trajectory_generator.c -o CMakeFiles/main.dir/src/trajectory_generator/trajectory_generator.c.s
-
-CMakeFiles/main.dir/src/main.c.o: CMakeFiles/main.dir/flags.make
-CMakeFiles/main.dir/src/main.c.o: /home/ostifede02/itacarobotics/Metis2/code/src/main.c
-CMakeFiles/main.dir/src/main.c.o: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ostifede02/itacarobotics/Metis2/code/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object CMakeFiles/main.dir/src/main.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/main.dir/src/main.c.o -MF CMakeFiles/main.dir/src/main.c.o.d -o CMakeFiles/main.dir/src/main.c.o -c /home/ostifede02/itacarobotics/Metis2/code/src/main.c
-
-CMakeFiles/main.dir/src/main.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/main.dir/src/main.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ostifede02/itacarobotics/Metis2/code/src/main.c > CMakeFiles/main.dir/src/main.c.i
-
-CMakeFiles/main.dir/src/main.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/main.dir/src/main.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ostifede02/itacarobotics/Metis2/code/src/main.c -o CMakeFiles/main.dir/src/main.c.s
+CMakeFiles/main.dir/src/app/app_main.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/main.dir/src/app/app_main.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ostifede02/itacarobotics/Metis2/code/src/app/app_main.c -o CMakeFiles/main.dir/src/app/app_main.c.s
 
 # Object files for target main
 main_OBJECTS = \
-"CMakeFiles/main.dir/src/buffer/buffer.c.o" \
-"CMakeFiles/main.dir/src/comunication/comunication.c.o" \
-"CMakeFiles/main.dir/src/gcode/gcode.c.o" \
-"CMakeFiles/main.dir/src/gripper_driver/gripper_driver.c.o" \
-"CMakeFiles/main.dir/src/inverse_geometry/inverse_geometry.c.o" \
-"CMakeFiles/main.dir/src/module_template/module_template.c.o" \
-"CMakeFiles/main.dir/src/motion_planner/motion_planner.c.o" \
-"CMakeFiles/main.dir/src/motor_driver/motor_driver.c.o" \
-"CMakeFiles/main.dir/src/robot/robot.c.o" \
-"CMakeFiles/main.dir/src/task_manager/task_manager.c.o" \
-"CMakeFiles/main.dir/src/trajectory_generator/trajectory_generator.c.o" \
-"CMakeFiles/main.dir/src/main.c.o"
+"CMakeFiles/main.dir/src/modules/buffer/buffer.c.o" \
+"CMakeFiles/main.dir/src/modules/gcode/gcode.c.o" \
+"CMakeFiles/main.dir/src/modules/inverse_geometry/inverse_geometry.c.o" \
+"CMakeFiles/main.dir/src/modules/motion_planner/motion_planner.c.o" \
+"CMakeFiles/main.dir/src/modules/robot/robot.c.o" \
+"CMakeFiles/main.dir/src/modules/trajectory_generator/trajectory_generator.c.o" \
+"CMakeFiles/main.dir/src/app/app_main.c.o"
 
 # External object files for target main
 main_EXTERNAL_OBJECTS =
 
-main: CMakeFiles/main.dir/src/buffer/buffer.c.o
-main: CMakeFiles/main.dir/src/comunication/comunication.c.o
-main: CMakeFiles/main.dir/src/gcode/gcode.c.o
-main: CMakeFiles/main.dir/src/gripper_driver/gripper_driver.c.o
-main: CMakeFiles/main.dir/src/inverse_geometry/inverse_geometry.c.o
-main: CMakeFiles/main.dir/src/module_template/module_template.c.o
-main: CMakeFiles/main.dir/src/motion_planner/motion_planner.c.o
-main: CMakeFiles/main.dir/src/motor_driver/motor_driver.c.o
-main: CMakeFiles/main.dir/src/robot/robot.c.o
-main: CMakeFiles/main.dir/src/task_manager/task_manager.c.o
-main: CMakeFiles/main.dir/src/trajectory_generator/trajectory_generator.c.o
-main: CMakeFiles/main.dir/src/main.c.o
+main: CMakeFiles/main.dir/src/modules/buffer/buffer.c.o
+main: CMakeFiles/main.dir/src/modules/gcode/gcode.c.o
+main: CMakeFiles/main.dir/src/modules/inverse_geometry/inverse_geometry.c.o
+main: CMakeFiles/main.dir/src/modules/motion_planner/motion_planner.c.o
+main: CMakeFiles/main.dir/src/modules/robot/robot.c.o
+main: CMakeFiles/main.dir/src/modules/trajectory_generator/trajectory_generator.c.o
+main: CMakeFiles/main.dir/src/app/app_main.c.o
 main: CMakeFiles/main.dir/build.make
 main: CMakeFiles/main.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ostifede02/itacarobotics/Metis2/code/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Linking C executable main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ostifede02/itacarobotics/Metis2/code/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking C executable main"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/main.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

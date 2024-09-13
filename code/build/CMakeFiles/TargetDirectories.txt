@@ -1,3 +1,4 @@
 /home/ostifede02/itacarobotics/Metis2/code/build/CMakeFiles/main.dir
+/home/ostifede02/itacarobotics/Metis2/code/build/CMakeFiles/buffer_test.dir
 /home/ostifede02/itacarobotics/Metis2/code/build/CMakeFiles/edit_cache.dir
 /home/ostifede02/itacarobotics/Metis2/code/build/CMakeFiles/rebuild_cache.dir
