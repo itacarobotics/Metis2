@@ -1,5 +1,5 @@
-#ifndef _BUFFER_H_
-#define _BUFFER_H_
+#ifndef BUFFER_H
+#define BUFFER_H
 
 
 /*
@@ -35,7 +35,7 @@
 #include <stdlib.h>
 
 #include "gcode.h"
-#include "module.h"
+#include "errors.h"
 #include "robot.h"
 
 
@@ -49,36 +49,32 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 
-struct bfr_gcode_t
+typedef struct
 {
-    struct gcode_t         *data;
-    enum gcode_cmd_t        next_cmd;
-    uint32_t                head_idx;
-    uint32_t                tail_idx;
-    uint32_t                size;
-    uint32_t                length;
-    uint16_t                mutex;      // semaphore to ensure syncronisation
-};
+    gcode_t         *data;
+    uint32_t        head_idx;
+    uint32_t        tail_idx;
+    uint32_t        size;
+    uint32_t        length;
+    uint16_t        mutex;      // semaphore to ensure syncronisation
+} bfr_gcode_t;
 
 
 ////////////////////////////////////////////////////////////////////////////////
 // Public (global) externs
 ////////////////////////////////////////////////////////////////////////////////
 
-extern struct bfr_gcode_t bfr_gcode_cmds;
-extern struct bfr_gcode_t bfr_robot_cmds;
+extern bfr_gcode_t bfr_gcode_cmds;
+extern bfr_gcode_t bfr_robot_cmds;
 
 ////////////////////////////////////////////////////////////////////////////////
 // Public (global) function declarations
 ////////////////////////////////////////////////////////////////////////////////
 
-int32_t bfr_init(struct bfr_gcode_t *buffer, uint32_t buffer_size);
-int32_t bfr_reset(struct bfr_gcode_t *buffer);
+int32_t bfr_init(bfr_gcode_t *buffer, uint32_t buffer_size);
+int32_t bfr_reset(bfr_gcode_t *buffer);
 
-int32_t bfr_produce(struct bfr_gcode_t *buffer, struct gcode_t item);
-int32_t bfr_consume(struct bfr_gcode_t *buffer, struct gcode_t *item);
+int32_t bfr_produce(bfr_gcode_t *buffer, gcode_t item);
+int32_t bfr_consume(bfr_gcode_t *buffer, gcode_t *item);
 
-int32_t bfr_get_next_cmd(struct bfr_gcode_t *buffer, enum gcode_cmd_t *cmd);
-
-
-#endif // _BUFFER_H_
+#endif // BUFFER_H

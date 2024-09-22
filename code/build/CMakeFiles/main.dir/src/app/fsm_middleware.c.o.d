@@ -1,32 +1,33 @@
-CMakeFiles/main.dir/src/modules/trajectory_generator/trajectory_generator.c.o: \
- /home/ostifede02/itacarobotics/Metis2/code/src/modules/trajectory_generator/trajectory_generator.c \
- /usr/include/stdc-predef.h \
- /home/ostifede02/itacarobotics/Metis2/code/src/modules/include/trajectory_generator.h \
- /usr/lib/gcc/x86_64-linux-gnu/11/include/stdint.h /usr/include/stdint.h \
- /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
- /usr/include/features.h /usr/include/features-time64.h \
+CMakeFiles/main.dir/src/app/fsm_middleware.c.o: \
+ /home/ostifede02/itacarobotics/Metis2/code/src/app/fsm_middleware.c \
+ /usr/include/stdc-predef.h /usr/include/syslog.h \
+ /usr/include/x86_64-linux-gnu/sys/syslog.h /usr/include/features.h \
+ /usr/include/features-time64.h \
  /usr/include/x86_64-linux-gnu/bits/wordsize.h \
  /usr/include/x86_64-linux-gnu/bits/timesize.h \
  /usr/include/x86_64-linux-gnu/sys/cdefs.h \
  /usr/include/x86_64-linux-gnu/bits/long-double.h \
  /usr/include/x86_64-linux-gnu/gnu/stubs.h \
  /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
- /usr/include/x86_64-linux-gnu/bits/types.h \
- /usr/include/x86_64-linux-gnu/bits/typesizes.h \
- /usr/include/x86_64-linux-gnu/bits/time64.h \
- /usr/include/x86_64-linux-gnu/bits/wchar.h \
- /usr/include/x86_64-linux-gnu/bits/stdint-intn.h \
- /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h /usr/include/stdlib.h \
+ /usr/lib/gcc/x86_64-linux-gnu/11/include/stdarg.h \
+ /usr/include/x86_64-linux-gnu/bits/syslog-path.h \
+ /usr/include/x86_64-linux-gnu/bits/floatn.h \
+ /usr/include/x86_64-linux-gnu/bits/floatn-common.h \
+ /home/ostifede02/itacarobotics/Metis2/code/src/app/include/fsm_middleware.h \
+ /usr/include/stdlib.h \
+ /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h \
  /usr/include/x86_64-linux-gnu/bits/waitflags.h \
  /usr/include/x86_64-linux-gnu/bits/waitstatus.h \
- /usr/include/x86_64-linux-gnu/bits/floatn.h \
- /usr/include/x86_64-linux-gnu/bits/floatn-common.h \
  /usr/include/x86_64-linux-gnu/sys/types.h \
+ /usr/include/x86_64-linux-gnu/bits/types.h \
+ /usr/include/x86_64-linux-gnu/bits/typesizes.h \
+ /usr/include/x86_64-linux-gnu/bits/time64.h \
  /usr/include/x86_64-linux-gnu/bits/types/clock_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/clockid_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/time_t.h \
- /usr/include/x86_64-linux-gnu/bits/types/timer_t.h /usr/include/endian.h \
+ /usr/include/x86_64-linux-gnu/bits/types/timer_t.h \
+ /usr/include/x86_64-linux-gnu/bits/stdint-intn.h /usr/include/endian.h \
  /usr/include/x86_64-linux-gnu/bits/endian.h \
  /usr/include/x86_64-linux-gnu/bits/endianness.h \
  /usr/include/x86_64-linux-gnu/bits/byteswap.h \
@@ -43,7 +44,16 @@ CMakeFiles/main.dir/src/modules/trajectory_generator/trajectory_generator.c.o: \
  /usr/include/x86_64-linux-gnu/bits/atomic_wide_counter.h \
  /usr/include/x86_64-linux-gnu/bits/struct_mutex.h \
  /usr/include/x86_64-linux-gnu/bits/struct_rwlock.h /usr/include/alloca.h \
- /usr/include/x86_64-linux-gnu/bits/stdlib-float.h /usr/include/string.h \
+ /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
+ /home/ostifede02/itacarobotics/Metis2/code/src/modules/include/buffer.h \
+ /usr/lib/gcc/x86_64-linux-gnu/11/include/stdint.h /usr/include/stdint.h \
+ /usr/include/x86_64-linux-gnu/bits/wchar.h \
+ /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
+ /home/ostifede02/itacarobotics/Metis2/code/src/modules/include/gcode.h \
+ /home/ostifede02/itacarobotics/Metis2/code/src/modules/include/errors.h \
+ /home/ostifede02/itacarobotics/Metis2/code/src/modules/include/robot.h \
+ /home/ostifede02/itacarobotics/Metis2/code/src/modules/include/trajectory_generator.h \
+ /usr/include/string.h \
  /usr/include/x86_64-linux-gnu/bits/types/locale_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h \
  /usr/include/strings.h /usr/include/math.h \
@@ -54,6 +64,6 @@ CMakeFiles/main.dir/src/modules/trajectory_generator/trajectory_generator.c.o: \
  /usr/include/x86_64-linux-gnu/bits/fp-fast.h \
  /usr/include/x86_64-linux-gnu/bits/mathcalls-helper-functions.h \
  /usr/include/x86_64-linux-gnu/bits/mathcalls.h \
+ /home/ostifede02/itacarobotics/Metis2/code/src/modules/include/inverse_geometry.h \
  /home/ostifede02/itacarobotics/Metis2/code/src/modules/include/gcode.h \
- /home/ostifede02/itacarobotics/Metis2/code/src/modules/include/robot.h \
- /home/ostifede02/itacarobotics/Metis2/code/src/modules/include/errors.h
+ /home/ostifede02/itacarobotics/Metis2/code/src/modules/include/robot.h

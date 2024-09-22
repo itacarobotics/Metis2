@@ -78,7 +78,7 @@ static int32_t ig_compute_angle(float x, float y, float z, float *q_i);
  * with equations derived from simple angle relationships and projections. Therefore, no 
  * trigonometric systems of equations are solved.
  */
-int32_t ig_inverse_geometry(struct gcode_t *pos)
+int32_t ig_get_inverse_geometry(gcode_t *pos)
 {
     int32_t rc;
 

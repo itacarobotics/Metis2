@@ -1,5 +1,5 @@
-#ifndef _CUMMUNICATION_H_
-#define _CUMMUNICATION_H_
+#ifndef CUMMUNICATION_H
+#define CUMMUNICATION_H
 
 
 /*
@@ -56,4 +56,4 @@
 
 
 
-#endif // _CUMMUNICATION_H_
+#endif // CUMMUNICATION_H

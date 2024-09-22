@@ -44,8 +44,8 @@
 // Private (static) function declarations
 ////////////////////////////////////////////////////////////////////////////////
 
-static int32_t bfr_is_empty(struct bfr_gcode_t *buffer);
-static int32_t bfr_is_full(struct bfr_gcode_t *buffer);
+static int32_t bfr_is_empty(bfr_gcode_t *buffer);
+static int32_t bfr_is_full(bfr_gcode_t *buffer);
 
 ////////////////////////////////////////////////////////////////////////////////
 // Private (static) variables
@@ -68,19 +68,19 @@ static int32_t bfr_is_full(struct bfr_gcode_t *buffer);
  *  @brief Init buffer.
  *  @param  *buffer Pointer to buffer to be initialized.
  */
-int32_t bfr_init(struct bfr_gcode_t *buffer, uint32_t buffer_size)
+int32_t bfr_init(bfr_gcode_t *buffer, uint32_t buffer_size)
 {
     buffer->size = buffer_size;
-    buffer->data = malloc(buffer_size * sizeof(struct gcode_t));
+    buffer->data = malloc(buffer_size * sizeof(gcode_t));
 
     // buffer->status     = BFR_EMPTY;
-    buffer->next_cmd   = None;
     buffer->length     = 0;
     buffer->head_idx   = 0;
     buffer->tail_idx   = 0;
     buffer->mutex      = 1;
-    return 0;
+    return MOD_RET_OK;
 }
+
 
 /**
  * @brief Adds an item to the buffer
@@ -89,7 +89,7 @@ int32_t bfr_init(struct bfr_gcode_t *buffer, uint32_t buffer_size)
  * @return ***
  * @note Function is concurrency mutex protected.
  */
-int32_t bfr_produce(struct bfr_gcode_t *buffer, struct gcode_t item)
+int32_t bfr_produce(bfr_gcode_t *buffer, gcode_t item)
 {
     if (bfr_is_full(buffer)) {
         return BFR_ERR_FULL;
@@ -106,7 +106,7 @@ int32_t bfr_produce(struct bfr_gcode_t *buffer, struct gcode_t item)
 
     buffer->mutex = 1;       // unlock process
 
-    return 0;        // succesfully added new item to buffer
+    return MOD_RET_OK;        // succesfully added new item to buffer
 }
 
 
@@ -117,7 +117,7 @@ int32_t bfr_produce(struct bfr_gcode_t *buffer, struct gcode_t item)
  * @return ***
  * @note Function is concurrency mutex protected.
  */
-int32_t bfr_consume(struct bfr_gcode_t *buffer, struct gcode_t *item)
+int32_t bfr_consume(bfr_gcode_t *buffer, gcode_t *item)
 {
     if (bfr_is_empty(buffer)) {
         return BFR_ERR_EMPTY;
@@ -136,7 +136,7 @@ int32_t bfr_consume(struct bfr_gcode_t *buffer, struct gcode_t *item)
 
     buffer->mutex = 1;       // unlock process
 
-    return 0;        // succesfully taken item from buffer
+    return MOD_RET_OK;        // succesfully taken item from buffer
 }
 
 /**
@@ -144,35 +144,12 @@ int32_t bfr_consume(struct bfr_gcode_t *buffer, struct gcode_t *item)
  * @param *buffer Pointer to buffer.
  * @note Does not reallocate memory.
  */
-int32_t bfr_reset(struct bfr_gcode_t *buffer)
+int32_t bfr_reset(bfr_gcode_t *buffer)
 {
     buffer->length      = 0;
     buffer->head_idx    = 0;
     buffer->tail_idx    = 0;
-    return 0;
-}
-
-/**
- * @brief Returns the gcode command type of next item in buffer to be consumed.
- * @param *buffer Pointer to buffer.
- * @param *status Pointer where to save the cmd.
- * @note Function is concurrency mutex protected.
- */
-int32_t bfr_get_next_cmd(struct bfr_gcode_t *buffer, enum gcode_cmd_t *cmd)
-{
-    if (bfr_is_empty(buffer)) {
-        return BFR_ERR_EMPTY;
-    }
-
-    if (!buffer->mutex) {
-        return BFR_ERR_BUSY;   // the producer is adding an item
-    }
-
-    buffer->mutex = 0;      // lock process
-    *cmd = buffer->data[buffer->tail_idx].cmd;
-    buffer->mutex = 1;      // unlock process
-    
-    return 0;
+    return MOD_RET_OK;
 }
 
 
@@ -185,12 +162,12 @@ int32_t bfr_get_next_cmd(struct bfr_gcode_t *buffer, enum gcode_cmd_t *cmd)
  * @param *buffer Pointer to buffer.
  * @return 1 if true, 0 if false.
  */
-static int32_t bfr_is_empty(struct bfr_gcode_t *buffer)
+static int32_t bfr_is_empty(bfr_gcode_t *buffer)
 {
     if (buffer->length == 0) {
         return 1;   // true
     }
-    return 0;       // false
+    return MOD_RET_OK;       // false
 }
 
 /**
@@ -198,10 +175,10 @@ static int32_t bfr_is_empty(struct bfr_gcode_t *buffer)
  * @param *buffer Pointer to buffer.
  * @return 1 if true, 0 if false.
  */
-static int32_t bfr_is_full(struct bfr_gcode_t *buffer)
+static int32_t bfr_is_full(bfr_gcode_t *buffer)
 {
     if (buffer->length == buffer->size) {
         return 1;   // true
     }
-    return 0;       // false
+    return MOD_RET_OK;       // false
 }

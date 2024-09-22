@@ -1,5 +1,7 @@
 {
     "files.associations": {
-        "inverse_geometry.h": "c"
+        "inverse_geometry.h": "c",
+        "gcode.h": "c",
+        "robot.h": "c"
     }
 }

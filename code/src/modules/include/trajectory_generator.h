@@ -1,5 +1,5 @@
-#ifndef _TRAJECTORY_GENERATOR_H_
-#define _TRAJECTORY_GENERATOR_H_
+#ifndef TRAJECTORY_GENERATOR_H
+#define TRAJECTORY_GENERATOR_H
 
 
 /*
@@ -35,9 +35,9 @@
 #include <string.h>
 #include <math.h>
 
-#include "motion_planner.h"
 #include "gcode.h"
 #include "robot.h"
+#include "errors.h"
 
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -48,6 +48,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 // Type definitions
 ////////////////////////////////////////////////////////////////////////////////
+
 
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -64,8 +65,9 @@ void tg_start(void);
 void tg_reset(void);
 
 
-int32_t tg_set_new_trajectory(struct gcode_t *pos_goal);
-int32_t tg_get_via_point(struct gcode_t *pos);
+int32_t tg_set_next_trajectory(gcode_t pos_goal);
+int32_t tg_get_via_point(gcode_t *pos);
+void tg_set_positioning(gcode_cmd_t cmd);
 
 
-#endif // _TRAJECTORY_GENERATOR_H_
+#endif // TRAJECTORY_GENERATOR_H

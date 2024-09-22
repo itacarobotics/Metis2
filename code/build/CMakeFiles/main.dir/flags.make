@@ -4,7 +4,7 @@
 # compile C with /usr/bin/cc
 C_DEFINES = 
 
-C_INCLUDES = -I/home/ostifede02/itacarobotics/Metis2/code/src/modules/include
+C_INCLUDES = -I/home/ostifede02/itacarobotics/Metis2/code/src/modules/include -I/home/ostifede02/itacarobotics/Metis2/code/src/app/include
 
 C_FLAGS = -std=gnu11
 

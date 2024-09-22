@@ -111,24 +111,10 @@ CMakeFiles/main.dir/src/modules/inverse_geometry/inverse_geometry.c.s: cmake_for
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/main.dir/src/modules/inverse_geometry/inverse_geometry.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ostifede02/itacarobotics/Metis2/code/src/modules/inverse_geometry/inverse_geometry.c -o CMakeFiles/main.dir/src/modules/inverse_geometry/inverse_geometry.c.s
 
-CMakeFiles/main.dir/src/modules/motion_planner/motion_planner.c.o: CMakeFiles/main.dir/flags.make
-CMakeFiles/main.dir/src/modules/motion_planner/motion_planner.c.o: /home/ostifede02/itacarobotics/Metis2/code/src/modules/motion_planner/motion_planner.c
-CMakeFiles/main.dir/src/modules/motion_planner/motion_planner.c.o: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ostifede02/itacarobotics/Metis2/code/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/main.dir/src/modules/motion_planner/motion_planner.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/main.dir/src/modules/motion_planner/motion_planner.c.o -MF CMakeFiles/main.dir/src/modules/motion_planner/motion_planner.c.o.d -o CMakeFiles/main.dir/src/modules/motion_planner/motion_planner.c.o -c /home/ostifede02/itacarobotics/Metis2/code/src/modules/motion_planner/motion_planner.c
-
-CMakeFiles/main.dir/src/modules/motion_planner/motion_planner.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/main.dir/src/modules/motion_planner/motion_planner.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ostifede02/itacarobotics/Metis2/code/src/modules/motion_planner/motion_planner.c > CMakeFiles/main.dir/src/modules/motion_planner/motion_planner.c.i
-
-CMakeFiles/main.dir/src/modules/motion_planner/motion_planner.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/main.dir/src/modules/motion_planner/motion_planner.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ostifede02/itacarobotics/Metis2/code/src/modules/motion_planner/motion_planner.c -o CMakeFiles/main.dir/src/modules/motion_planner/motion_planner.c.s
-
 CMakeFiles/main.dir/src/modules/robot/robot.c.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/src/modules/robot/robot.c.o: /home/ostifede02/itacarobotics/Metis2/code/src/modules/robot/robot.c
 CMakeFiles/main.dir/src/modules/robot/robot.c.o: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ostifede02/itacarobotics/Metis2/code/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/main.dir/src/modules/robot/robot.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ostifede02/itacarobotics/Metis2/code/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/main.dir/src/modules/robot/robot.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/main.dir/src/modules/robot/robot.c.o -MF CMakeFiles/main.dir/src/modules/robot/robot.c.o.d -o CMakeFiles/main.dir/src/modules/robot/robot.c.o -c /home/ostifede02/itacarobotics/Metis2/code/src/modules/robot/robot.c
 
 CMakeFiles/main.dir/src/modules/robot/robot.c.i: cmake_force
@@ -142,7 +128,7 @@ CMakeFiles/main.dir/src/modules/robot/robot.c.s: cmake_force
 CMakeFiles/main.dir/src/modules/trajectory_generator/trajectory_generator.c.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/src/modules/trajectory_generator/trajectory_generator.c.o: /home/ostifede02/itacarobotics/Metis2/code/src/modules/trajectory_generator/trajectory_generator.c
 CMakeFiles/main.dir/src/modules/trajectory_generator/trajectory_generator.c.o: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ostifede02/itacarobotics/Metis2/code/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/main.dir/src/modules/trajectory_generator/trajectory_generator.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ostifede02/itacarobotics/Metis2/code/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/main.dir/src/modules/trajectory_generator/trajectory_generator.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/main.dir/src/modules/trajectory_generator/trajectory_generator.c.o -MF CMakeFiles/main.dir/src/modules/trajectory_generator/trajectory_generator.c.o.d -o CMakeFiles/main.dir/src/modules/trajectory_generator/trajectory_generator.c.o -c /home/ostifede02/itacarobotics/Metis2/code/src/modules/trajectory_generator/trajectory_generator.c
 
 CMakeFiles/main.dir/src/modules/trajectory_generator/trajectory_generator.c.i: cmake_force
@@ -152,6 +138,20 @@ CMakeFiles/main.dir/src/modules/trajectory_generator/trajectory_generator.c.i: c
 CMakeFiles/main.dir/src/modules/trajectory_generator/trajectory_generator.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/main.dir/src/modules/trajectory_generator/trajectory_generator.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ostifede02/itacarobotics/Metis2/code/src/modules/trajectory_generator/trajectory_generator.c -o CMakeFiles/main.dir/src/modules/trajectory_generator/trajectory_generator.c.s
+
+CMakeFiles/main.dir/src/app/fsm_middleware.c.o: CMakeFiles/main.dir/flags.make
+CMakeFiles/main.dir/src/app/fsm_middleware.c.o: /home/ostifede02/itacarobotics/Metis2/code/src/app/fsm_middleware.c
+CMakeFiles/main.dir/src/app/fsm_middleware.c.o: CMakeFiles/main.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ostifede02/itacarobotics/Metis2/code/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/main.dir/src/app/fsm_middleware.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/main.dir/src/app/fsm_middleware.c.o -MF CMakeFiles/main.dir/src/app/fsm_middleware.c.o.d -o CMakeFiles/main.dir/src/app/fsm_middleware.c.o -c /home/ostifede02/itacarobotics/Metis2/code/src/app/fsm_middleware.c
+
+CMakeFiles/main.dir/src/app/fsm_middleware.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/main.dir/src/app/fsm_middleware.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ostifede02/itacarobotics/Metis2/code/src/app/fsm_middleware.c > CMakeFiles/main.dir/src/app/fsm_middleware.c.i
+
+CMakeFiles/main.dir/src/app/fsm_middleware.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/main.dir/src/app/fsm_middleware.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ostifede02/itacarobotics/Metis2/code/src/app/fsm_middleware.c -o CMakeFiles/main.dir/src/app/fsm_middleware.c.s
 
 CMakeFiles/main.dir/src/app/app_main.c.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/src/app/app_main.c.o: /home/ostifede02/itacarobotics/Metis2/code/src/app/app_main.c
@@ -172,9 +172,9 @@ main_OBJECTS = \
 "CMakeFiles/main.dir/src/modules/buffer/buffer.c.o" \
 "CMakeFiles/main.dir/src/modules/gcode/gcode.c.o" \
 "CMakeFiles/main.dir/src/modules/inverse_geometry/inverse_geometry.c.o" \
-"CMakeFiles/main.dir/src/modules/motion_planner/motion_planner.c.o" \
 "CMakeFiles/main.dir/src/modules/robot/robot.c.o" \
 "CMakeFiles/main.dir/src/modules/trajectory_generator/trajectory_generator.c.o" \
+"CMakeFiles/main.dir/src/app/fsm_middleware.c.o" \
 "CMakeFiles/main.dir/src/app/app_main.c.o"
 
 # External object files for target main
@@ -183,9 +183,9 @@ main_EXTERNAL_OBJECTS =
 main: CMakeFiles/main.dir/src/modules/buffer/buffer.c.o
 main: CMakeFiles/main.dir/src/modules/gcode/gcode.c.o
 main: CMakeFiles/main.dir/src/modules/inverse_geometry/inverse_geometry.c.o
-main: CMakeFiles/main.dir/src/modules/motion_planner/motion_planner.c.o
 main: CMakeFiles/main.dir/src/modules/robot/robot.c.o
 main: CMakeFiles/main.dir/src/modules/trajectory_generator/trajectory_generator.c.o
+main: CMakeFiles/main.dir/src/app/fsm_middleware.c.o
 main: CMakeFiles/main.dir/src/app/app_main.c.o
 main: CMakeFiles/main.dir/build.make
 main: CMakeFiles/main.dir/link.txt

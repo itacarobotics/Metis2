@@ -1,5 +1,5 @@
-#ifndef _TASK_MANAGER_H_
-#define _TASK_MANAGER_H_
+#ifndef ERRORS_H
+#define ERRORS_H
 
 
 /*
@@ -31,24 +31,43 @@
  */
 
 
-#include "gcode.h"
-#include "robot.h"
-#include "buffer.h"
-#include "inverse_geometry.h"
-#include "trajectory_generator.h"
-
 
 ////////////////////////////////////////////////////////////////////////////////
 // Common macros
 ////////////////////////////////////////////////////////////////////////////////
 
+// Error codes.
+#define MOD_RET_OK                   0
+// Motion planning
+#define MP_ERR_BAD_STATUS           -1
+#define MP_ERR_END_OF_TRAJECTORY    -1
+#define MP_ERR_BAD_ARGUMENT         -1
+#define MP_ERR_BAD_TRAVEL_TIME      -1
+#define MP_ERR_BAD_VIA_POINT        -1
+#define MP_ERR_BAD_TRAJECTORY       -1
+#define MP_ERR_WS_LIMIT             -1
+#define MP_ERR_JOINT_LIMIT          -1
+// Buffer
+#define BFR_ERR_EMPTY               -1
+#define BFR_ERR_FULL                -2
+#define BFR_ERR_BUSY                -3
+// Robot
+#define RBT_ERR_SB                  -3
 
 
 ////////////////////////////////////////////////////////////////////////////////
 // Type definitions
 ////////////////////////////////////////////////////////////////////////////////
 
- 
+#define RETCHECK(fn, status)    \
+{                               \
+    int32_t rc = fn;            \
+    if ((rc != MOD_RET_OK))     \
+    {                           \
+        status = STATE_FATAL;   \
+    }                           \
+}
+
 ////////////////////////////////////////////////////////////////////////////////
 // Public (global) externs
 ////////////////////////////////////////////////////////////////////////////////
@@ -58,9 +77,5 @@
 // Public (global) function declarations
 ////////////////////////////////////////////////////////////////////////////////
 
-enum rc_status_t tm_init(void);
-enum rc_status_t tm_start(void);
-enum rc_status_t tm_run(void);
 
-
-#endif // _TASK_MANAGER_H_
+#endif // ERRORS_H

@@ -129,19 +129,6 @@ main/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
 .PHONY : main/fast
 
-#=============================================================================
-# Target rules for targets named buffer_test
-
-# Build rule for target.
-buffer_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 buffer_test
-.PHONY : buffer_test
-
-# fast build rule for target.
-buffer_test/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/buffer_test.dir/build.make CMakeFiles/buffer_test.dir/build
-.PHONY : buffer_test/fast
-
 src/app/app_main.o: src/app/app_main.c.o
 .PHONY : src/app/app_main.o
 
@@ -166,13 +153,36 @@ src/app/app_main.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/app/app_main.c.s
 .PHONY : src/app/app_main.c.s
 
+src/app/fsm_middleware.o: src/app/fsm_middleware.c.o
+.PHONY : src/app/fsm_middleware.o
+
+# target to build an object file
+src/app/fsm_middleware.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/app/fsm_middleware.c.o
+.PHONY : src/app/fsm_middleware.c.o
+
+src/app/fsm_middleware.i: src/app/fsm_middleware.c.i
+.PHONY : src/app/fsm_middleware.i
+
+# target to preprocess a source file
+src/app/fsm_middleware.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/app/fsm_middleware.c.i
+.PHONY : src/app/fsm_middleware.c.i
+
+src/app/fsm_middleware.s: src/app/fsm_middleware.c.s
+.PHONY : src/app/fsm_middleware.s
+
+# target to generate assembly for a file
+src/app/fsm_middleware.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/app/fsm_middleware.c.s
+.PHONY : src/app/fsm_middleware.c.s
+
 src/modules/buffer/buffer.o: src/modules/buffer/buffer.c.o
 .PHONY : src/modules/buffer/buffer.o
 
 # target to build an object file
 src/modules/buffer/buffer.c.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/modules/buffer/buffer.c.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/buffer_test.dir/build.make CMakeFiles/buffer_test.dir/src/modules/buffer/buffer.c.o
 .PHONY : src/modules/buffer/buffer.c.o
 
 src/modules/buffer/buffer.i: src/modules/buffer/buffer.c.i
@@ -181,7 +191,6 @@ src/modules/buffer/buffer.i: src/modules/buffer/buffer.c.i
 # target to preprocess a source file
 src/modules/buffer/buffer.c.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/modules/buffer/buffer.c.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/buffer_test.dir/build.make CMakeFiles/buffer_test.dir/src/modules/buffer/buffer.c.i
 .PHONY : src/modules/buffer/buffer.c.i
 
 src/modules/buffer/buffer.s: src/modules/buffer/buffer.c.s
@@ -190,7 +199,6 @@ src/modules/buffer/buffer.s: src/modules/buffer/buffer.c.s
 # target to generate assembly for a file
 src/modules/buffer/buffer.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/modules/buffer/buffer.c.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/buffer_test.dir/build.make CMakeFiles/buffer_test.dir/src/modules/buffer/buffer.c.s
 .PHONY : src/modules/buffer/buffer.c.s
 
 src/modules/gcode/gcode.o: src/modules/gcode/gcode.c.o
@@ -199,7 +207,6 @@ src/modules/gcode/gcode.o: src/modules/gcode/gcode.c.o
 # target to build an object file
 src/modules/gcode/gcode.c.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/modules/gcode/gcode.c.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/buffer_test.dir/build.make CMakeFiles/buffer_test.dir/src/modules/gcode/gcode.c.o
 .PHONY : src/modules/gcode/gcode.c.o
 
 src/modules/gcode/gcode.i: src/modules/gcode/gcode.c.i
@@ -208,7 +215,6 @@ src/modules/gcode/gcode.i: src/modules/gcode/gcode.c.i
 # target to preprocess a source file
 src/modules/gcode/gcode.c.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/modules/gcode/gcode.c.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/buffer_test.dir/build.make CMakeFiles/buffer_test.dir/src/modules/gcode/gcode.c.i
 .PHONY : src/modules/gcode/gcode.c.i
 
 src/modules/gcode/gcode.s: src/modules/gcode/gcode.c.s
@@ -217,7 +223,6 @@ src/modules/gcode/gcode.s: src/modules/gcode/gcode.c.s
 # target to generate assembly for a file
 src/modules/gcode/gcode.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/modules/gcode/gcode.c.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/buffer_test.dir/build.make CMakeFiles/buffer_test.dir/src/modules/gcode/gcode.c.s
 .PHONY : src/modules/gcode/gcode.c.s
 
 src/modules/inverse_geometry/inverse_geometry.o: src/modules/inverse_geometry/inverse_geometry.c.o
@@ -226,7 +231,6 @@ src/modules/inverse_geometry/inverse_geometry.o: src/modules/inverse_geometry/in
 # target to build an object file
 src/modules/inverse_geometry/inverse_geometry.c.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/modules/inverse_geometry/inverse_geometry.c.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/buffer_test.dir/build.make CMakeFiles/buffer_test.dir/src/modules/inverse_geometry/inverse_geometry.c.o
 .PHONY : src/modules/inverse_geometry/inverse_geometry.c.o
 
 src/modules/inverse_geometry/inverse_geometry.i: src/modules/inverse_geometry/inverse_geometry.c.i
@@ -235,7 +239,6 @@ src/modules/inverse_geometry/inverse_geometry.i: src/modules/inverse_geometry/in
 # target to preprocess a source file
 src/modules/inverse_geometry/inverse_geometry.c.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/modules/inverse_geometry/inverse_geometry.c.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/buffer_test.dir/build.make CMakeFiles/buffer_test.dir/src/modules/inverse_geometry/inverse_geometry.c.i
 .PHONY : src/modules/inverse_geometry/inverse_geometry.c.i
 
 src/modules/inverse_geometry/inverse_geometry.s: src/modules/inverse_geometry/inverse_geometry.c.s
@@ -244,35 +247,7 @@ src/modules/inverse_geometry/inverse_geometry.s: src/modules/inverse_geometry/in
 # target to generate assembly for a file
 src/modules/inverse_geometry/inverse_geometry.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/modules/inverse_geometry/inverse_geometry.c.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/buffer_test.dir/build.make CMakeFiles/buffer_test.dir/src/modules/inverse_geometry/inverse_geometry.c.s
 .PHONY : src/modules/inverse_geometry/inverse_geometry.c.s
-
-src/modules/motion_planner/motion_planner.o: src/modules/motion_planner/motion_planner.c.o
-.PHONY : src/modules/motion_planner/motion_planner.o
-
-# target to build an object file
-src/modules/motion_planner/motion_planner.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/modules/motion_planner/motion_planner.c.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/buffer_test.dir/build.make CMakeFiles/buffer_test.dir/src/modules/motion_planner/motion_planner.c.o
-.PHONY : src/modules/motion_planner/motion_planner.c.o
-
-src/modules/motion_planner/motion_planner.i: src/modules/motion_planner/motion_planner.c.i
-.PHONY : src/modules/motion_planner/motion_planner.i
-
-# target to preprocess a source file
-src/modules/motion_planner/motion_planner.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/modules/motion_planner/motion_planner.c.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/buffer_test.dir/build.make CMakeFiles/buffer_test.dir/src/modules/motion_planner/motion_planner.c.i
-.PHONY : src/modules/motion_planner/motion_planner.c.i
-
-src/modules/motion_planner/motion_planner.s: src/modules/motion_planner/motion_planner.c.s
-.PHONY : src/modules/motion_planner/motion_planner.s
-
-# target to generate assembly for a file
-src/modules/motion_planner/motion_planner.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/modules/motion_planner/motion_planner.c.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/buffer_test.dir/build.make CMakeFiles/buffer_test.dir/src/modules/motion_planner/motion_planner.c.s
-.PHONY : src/modules/motion_planner/motion_planner.c.s
 
 src/modules/robot/robot.o: src/modules/robot/robot.c.o
 .PHONY : src/modules/robot/robot.o
@@ -280,7 +255,6 @@ src/modules/robot/robot.o: src/modules/robot/robot.c.o
 # target to build an object file
 src/modules/robot/robot.c.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/modules/robot/robot.c.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/buffer_test.dir/build.make CMakeFiles/buffer_test.dir/src/modules/robot/robot.c.o
 .PHONY : src/modules/robot/robot.c.o
 
 src/modules/robot/robot.i: src/modules/robot/robot.c.i
@@ -289,7 +263,6 @@ src/modules/robot/robot.i: src/modules/robot/robot.c.i
 # target to preprocess a source file
 src/modules/robot/robot.c.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/modules/robot/robot.c.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/buffer_test.dir/build.make CMakeFiles/buffer_test.dir/src/modules/robot/robot.c.i
 .PHONY : src/modules/robot/robot.c.i
 
 src/modules/robot/robot.s: src/modules/robot/robot.c.s
@@ -298,7 +271,6 @@ src/modules/robot/robot.s: src/modules/robot/robot.c.s
 # target to generate assembly for a file
 src/modules/robot/robot.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/modules/robot/robot.c.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/buffer_test.dir/build.make CMakeFiles/buffer_test.dir/src/modules/robot/robot.c.s
 .PHONY : src/modules/robot/robot.c.s
 
 src/modules/trajectory_generator/trajectory_generator.o: src/modules/trajectory_generator/trajectory_generator.c.o
@@ -307,7 +279,6 @@ src/modules/trajectory_generator/trajectory_generator.o: src/modules/trajectory_
 # target to build an object file
 src/modules/trajectory_generator/trajectory_generator.c.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/modules/trajectory_generator/trajectory_generator.c.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/buffer_test.dir/build.make CMakeFiles/buffer_test.dir/src/modules/trajectory_generator/trajectory_generator.c.o
 .PHONY : src/modules/trajectory_generator/trajectory_generator.c.o
 
 src/modules/trajectory_generator/trajectory_generator.i: src/modules/trajectory_generator/trajectory_generator.c.i
@@ -316,7 +287,6 @@ src/modules/trajectory_generator/trajectory_generator.i: src/modules/trajectory_
 # target to preprocess a source file
 src/modules/trajectory_generator/trajectory_generator.c.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/modules/trajectory_generator/trajectory_generator.c.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/buffer_test.dir/build.make CMakeFiles/buffer_test.dir/src/modules/trajectory_generator/trajectory_generator.c.i
 .PHONY : src/modules/trajectory_generator/trajectory_generator.c.i
 
 src/modules/trajectory_generator/trajectory_generator.s: src/modules/trajectory_generator/trajectory_generator.c.s
@@ -325,32 +295,7 @@ src/modules/trajectory_generator/trajectory_generator.s: src/modules/trajectory_
 # target to generate assembly for a file
 src/modules/trajectory_generator/trajectory_generator.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/modules/trajectory_generator/trajectory_generator.c.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/buffer_test.dir/build.make CMakeFiles/buffer_test.dir/src/modules/trajectory_generator/trajectory_generator.c.s
 .PHONY : src/modules/trajectory_generator/trajectory_generator.c.s
-
-tests/buffer_test.o: tests/buffer_test.c.o
-.PHONY : tests/buffer_test.o
-
-# target to build an object file
-tests/buffer_test.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/buffer_test.dir/build.make CMakeFiles/buffer_test.dir/tests/buffer_test.c.o
-.PHONY : tests/buffer_test.c.o
-
-tests/buffer_test.i: tests/buffer_test.c.i
-.PHONY : tests/buffer_test.i
-
-# target to preprocess a source file
-tests/buffer_test.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/buffer_test.dir/build.make CMakeFiles/buffer_test.dir/tests/buffer_test.c.i
-.PHONY : tests/buffer_test.c.i
-
-tests/buffer_test.s: tests/buffer_test.c.s
-.PHONY : tests/buffer_test.s
-
-# target to generate assembly for a file
-tests/buffer_test.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/buffer_test.dir/build.make CMakeFiles/buffer_test.dir/tests/buffer_test.c.s
-.PHONY : tests/buffer_test.c.s
 
 # Help Target
 help:
@@ -360,11 +305,13 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... buffer_test"
 	@echo "... main"
 	@echo "... src/app/app_main.o"
 	@echo "... src/app/app_main.i"
 	@echo "... src/app/app_main.s"
+	@echo "... src/app/fsm_middleware.o"
+	@echo "... src/app/fsm_middleware.i"
+	@echo "... src/app/fsm_middleware.s"
 	@echo "... src/modules/buffer/buffer.o"
 	@echo "... src/modules/buffer/buffer.i"
 	@echo "... src/modules/buffer/buffer.s"
@@ -374,18 +321,12 @@ help:
 	@echo "... src/modules/inverse_geometry/inverse_geometry.o"
 	@echo "... src/modules/inverse_geometry/inverse_geometry.i"
 	@echo "... src/modules/inverse_geometry/inverse_geometry.s"
-	@echo "... src/modules/motion_planner/motion_planner.o"
-	@echo "... src/modules/motion_planner/motion_planner.i"
-	@echo "... src/modules/motion_planner/motion_planner.s"
 	@echo "... src/modules/robot/robot.o"
 	@echo "... src/modules/robot/robot.i"
 	@echo "... src/modules/robot/robot.s"
 	@echo "... src/modules/trajectory_generator/trajectory_generator.o"
 	@echo "... src/modules/trajectory_generator/trajectory_generator.i"
 	@echo "... src/modules/trajectory_generator/trajectory_generator.s"
-	@echo "... tests/buffer_test.o"
-	@echo "... tests/buffer_test.i"
-	@echo "... tests/buffer_test.s"
 .PHONY : help
 
 

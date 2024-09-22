@@ -1,9 +1,9 @@
-#ifndef _GCODE_H_
-#define _GCODE_H_
+#ifndef GCODE_H
+#define GCODE_H
 
 
 /*
- * @brief Example template.
+ * @brief gcode data types.
  *
  * See implementation file for information about this module.
  *
@@ -43,7 +43,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 /**
- * Contains all possible gcode commands.
+ * @brief Contains all possible gcode commands.
  * 
  * @param G01 { X Y Z I J K T }     linear interpolation
  * @param G02 { X Y Z I J K T }     CW arc or circle
@@ -60,9 +60,8 @@
  * @param CHB                       cmd for HARD BREAK
  * @param CES                       cmd for EMERGENCY STOP 
  */
-enum gcode_cmd_t
+typedef enum
 {
-    None,
     G01,
     G02,
     G03,
@@ -77,11 +76,11 @@ enum gcode_cmd_t
     CSB,
     CHB,
     CES
-};
+} gcode_cmd_t;
 
 
 /**
- * Contains all possible gcode commands with respective datas.
+ * @brief Contains datas of all possible gcode commands.
  * 
  * @param x     End-effector position, [ mm ]
  * @param y     End-effector position, [ mm ]
@@ -95,7 +94,7 @@ enum gcode_cmd_t
  * @param q4    Joint actuator 4, [ rad ]
  * @param t     Time stamp, [ s ]
  */
-struct gcode_data_t
+typedef struct
 {
     float   x;
     float   y;
@@ -108,11 +107,11 @@ struct gcode_data_t
     float   q3;
     float   q4;
     float   t;
-};
+} gcode_data_t;
 
 
 /**
- * Contains all possible gcode commands with respective datas.
+ * @brief Contains gcode command and data instance.
  * 
  * @param G01 { X Y Z I J K T }     linear interpolation
  * @param G02 { X Y Z I J K T }     CW arc or circle
@@ -141,11 +140,11 @@ struct gcode_data_t
  * @param q4    Joint actuator 4, [ rad ]
  * @param t     Time stamp, [ s ]
  */
-struct gcode_t
+typedef struct
 {
-    enum    gcode_cmd_t     cmd;
-    struct  gcode_data_t    data;
-};
+    gcode_cmd_t     cmd;
+    gcode_data_t    data;
+} gcode_t;
 
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -160,4 +159,4 @@ struct gcode_t
 
 
 
-#endif // _GCODE_H_
+#endif // GCODE_H

@@ -55,5 +55,5 @@ CMakeFiles/main.dir/src/app/app_main.c.o: \
  /usr/include/x86_64-linux-gnu/bits/struct_mutex.h \
  /usr/include/x86_64-linux-gnu/bits/struct_rwlock.h /usr/include/alloca.h \
  /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
- /home/ostifede02/itacarobotics/Metis2/code/src/modules/include/module.h \
+ /home/ostifede02/itacarobotics/Metis2/code/src/modules/include/errors.h \
  /home/ostifede02/itacarobotics/Metis2/code/src/modules/include/robot.h

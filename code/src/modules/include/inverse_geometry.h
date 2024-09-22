@@ -1,5 +1,5 @@
-#ifndef _INVERSE_GEOMETRY_H_
-#define _INVERSE_GEOMETRY_H_
+#ifndef INVERSE_GEOMETRY_H
+#define INVERSE_GEOMETRY_H
 
 
 /*
@@ -30,10 +30,11 @@
  * SOFTWARE.
  */
 
+#include "stdint.h"
+
 #include "gcode.h"
 #include "robot.h"
-#include "motion_planner.h"
-
+#include "errors.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 // Common macros
@@ -55,6 +56,6 @@
 // Public (global) function declarations
 ////////////////////////////////////////////////////////////////////////////////
 
-int32_t ig_inverse_geometry(struct gcode_t *pos);
+int32_t ig_get_inverse_geometry(gcode_t *pos);
 
-#endif // _INVERSE_GEOMETRY_H_
+#endif // INVERSE_GEOMETRY_H

@@ -1,5 +1,5 @@
-#ifndef _ROBOT_H_
-#define _ROBOT_H_
+#ifndef ROBOT_H
+#define ROBOT_H
 
 
 /*
@@ -61,7 +61,7 @@
 // Type definitions
 ////////////////////////////////////////////////////////////////////////////////
 
-enum robot_status_t
+typedef enum
 {
     ROBOT_RUN,
     ROBOT_IDLE,
@@ -72,24 +72,20 @@ enum robot_status_t
     ROBOT_SOFT_BREAK,         // the goal position is reached and then break
     ROBOT_HARD_BREAK,         // it stops with motors enabled
     ROBOT_EMERGENCY_STOP      // it stops with motors disabled
-};
+} robot_status_t;
 
-struct robot_info_t
+typedef struct
 {
-    enum    robot_status_t  status;
-    struct  gcode_data_t    pos;
-};
+    robot_status_t  status;
+    gcode_data_t    pos;
+} robot_info_t;
 
-struct robot_cfg
-{
-
-};
 
 ////////////////////////////////////////////////////////////////////////////////
 // Public (global) externs
 ////////////////////////////////////////////////////////////////////////////////
 
-extern struct robot_info_t  robot_info;
+extern robot_info_t  robot_info;
 
 ////////////////////////////////////////////////////////////////////////////////
 // Public (global) function declarations
@@ -97,4 +93,4 @@ extern struct robot_info_t  robot_info;
 
 
 
-#endif // _ROBOT_H_
+#endif // ROBOT_H
