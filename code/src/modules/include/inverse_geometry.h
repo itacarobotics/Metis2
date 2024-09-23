@@ -30,7 +30,10 @@
  * SOFTWARE.
  */
 
-#include "stdint.h"
+#include <stdint.h>
+
+#define __USE_XOPEN
+#include <math.h>
 
 #include "gcode.h"
 #include "robot.h"

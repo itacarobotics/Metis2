@@ -21,6 +21,14 @@ The finite state machine has:
 // State human-readable names
 const char *state_names[] = {"init", "consume", "compute", "produce", "fatal"};
 
+
+/*** USER CODE BEGIN GLOBAL ***/
+gcode_t gcode_line;
+bfr_gcode_t bfr_gcode_cmds;
+bfr_gcode_t bfr_robot_cmds;
+/*** USER CODE END GLOBAL ***/
+
+
 // List of state functions
 state_func_t *const state_table[NUM_STATES] = {
   do_init,    // in state init
@@ -59,9 +67,11 @@ state_t do_init(state_data_t *data) {
   state_t next_state = STATE_CONSUME;
 
   syslog(LOG_INFO, "[FSM] In state init");
-  /* Your Code Here */
+  
+  /*** USER CODE BEGIN INIT ***/
   bfr_init(&bfr_gcode_cmds, 8);
   bfr_init(&bfr_robot_cmds, 8);
+  /*** USER CODE END INIT ***/
 
   switch (next_state) {
     case STATE_CONSUME:
@@ -81,56 +91,44 @@ state_t do_consume(state_data_t *data) {
   state_t next_state = NO_CHANGE;
 
   syslog(LOG_INFO, "[FSM] In state consume");
-  /* Your Code Here */
+  
+  /*** USER CODE BEGIN CONSUME ***/
   int32_t rc;
-  rc = bfr_consume(&bfr_gcode_cmds, &gcode);
-  if (rc != MOD_RET_OK) {
+  
+  // get item from buffer
+  rc = bfr_consume(&bfr_gcode_cmds, &gcode_line);
+  if (rc != MOD_RET_OK) {   // buffer empty or busy
     return next_state;
   }
-  // here item has been consumed
 
-  switch (gcode.cmd)
+  // handle new item
+  switch (gcode_line.cmd)
   {
   case G01:
-    rc = tg_set_next_trajectory(gcode);
-    if (rc < 0) {
-      next_state = STATE_FATAL;
-    } else {
-      next_state = STATE_COMPUTE;
-    }
-    break;
-
   case G02:
-    rc = tg_set_next_trajectory(gcode);
-    if (rc < 0) {
-      next_state = STATE_FATAL;
-    } else {
-      next_state = STATE_COMPUTE;
-    }
-    break;
-
   case G03:
-    rc = tg_set_next_trajectory(gcode);
-    if (rc < 0) {
-      next_state = STATE_FATAL;
-    } else {
-      next_state = STATE_COMPUTE;
-    }
+    RETCHECK(tg_set_next_trajectory(gcode_line), STATE_COMPUTE);
     break;
 
   case G90:
-    tg_set_positioning(gcode.cmd);
-    next_state = NO_CHANGE;
-    break;
   case G91:
-    tg_set_positioning(gcode.cmd);
     next_state = NO_CHANGE;
+    tg_set_positioning(gcode_line.cmd);
     break;
- 
-  default:
+
+  case G04:
+  case G28:
+  case M04:
+  case M05:
+  case M17:
+  case M18:
     next_state = STATE_PRODUCE;
     break;
+
+  default:
+    break;
   }
+  /*** USER CODE END CONSUME ***/  
 
   switch (next_state) {
     case NO_CHANGE:
@@ -153,9 +151,11 @@ state_t do_compute(state_data_t *data) {
   state_t next_state = STATE_PRODUCE;
   
   syslog(LOG_INFO, "[FSM] In state compute");
-  /* Your Code Here */
+  
+  /*** USER CODE BEGIN COMPUTE ***/
   int32_t rc;
-  rc = tg_get_via_point(&gcode);
+  
+  rc = tg_get_via_point(&gcode_line);
   switch (rc)
   {
   case MP_ERR_END_OF_TRAJECTORY:
@@ -163,11 +163,11 @@ state_t do_compute(state_data_t *data) {
     break;
   case MOD_RET_OK:
     next_state = STATE_PRODUCE;
-
   default:
     next_state = STATE_FATAL;
     break;
   }
+  /*** USER CODE END COMPUTE ***/
 
   switch (next_state) {
     case STATE_PRODUCE:
@@ -188,30 +188,37 @@ state_t do_produce(state_data_t *data) {
   state_t next_state = NO_CHANGE;
   
   syslog(LOG_INFO, "[FSM] In state produce");
-  /* Your Code Here */
+  
+  /*** USER CODE BEGIN PRODUCE ***/
   int32_t rc;
-  rc = bfr_produce(&bfr_robot_cmds, gcode);
+  rc = bfr_produce(&bfr_robot_cmds, gcode_line);
   if (rc != MOD_RET_OK) {         // buffer is full
     return next_state;
   }
-  // here item has been produced
 
-  switch (gcode.cmd)
+  // handle item
+  switch (gcode_line.cmd)
   {
   case G01:
-    next_state = STATE_COMPUTE;
-    break;
   case G02:
-    next_state = STATE_COMPUTE;
-    break;
   case G03:
     next_state = STATE_COMPUTE;
     break;
-  
-  default:
+
+  case G04:
+  case G28:
+  case M04:
+  case M05:
+  case M17:
+  case M18:
     next_state = STATE_CONSUME;
     break;
+  
+  default:
+    break;
   }
+
+  /*** USER CODE END PRODUCE ***/
 
   switch (next_state) {
     case NO_CHANGE:
@@ -234,7 +241,11 @@ state_t do_fatal(state_data_t *data) {
   state_t next_state = NO_CHANGE;
   
   syslog(LOG_INFO, "[FSM] In state fatal");
-  /* Your Code Here */
+
+  /*** USER CODE BEGIN FATAL ***/
+
+
+  /*** USER CODE END FATAL ***/
   
   switch (next_state) {
     case NO_CHANGE:
@@ -265,7 +276,13 @@ state_t do_fatal(state_data_t *data) {
 // 1. from compute to fatal
 void handle_fatal_error(state_data_t *data) {
   syslog(LOG_INFO, "[FSM] State transition handle_fatal_error");
-  /* Your Code Here */
+  
+  /*** USER CODE BEGIN HANDLE_FATAL_ERROR ***/
+
+
+  /*** USER CODE END HANDLE_FATAL_ERROR ***/
+  
+  return;
 }
 
 

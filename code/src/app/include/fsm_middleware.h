@@ -19,14 +19,25 @@ extern "C" {
 #endif
 #include <stdlib.h>
 
+/*** USER CODE BEGIN INCLUDE ***/
 #include "buffer.h"
 #include "trajectory_generator.h"
 #include "inverse_geometry.h"
 #include "gcode.h"
 #include "robot.h"
+/*** USER CODE END INCLUDE ***/
 
 
-extern gcode_t gcode;
+/*** USER CODE BEGIN DEFINE ***/
+#define RETCHECK(fn, state)     \
+{                               \
+    if ((fn < 0))               \
+      next_state = STATE_FATAL; \
+    else                        \
+      next_state = state;       \
+}
+/*** USER CODE END DEFINE ***/
+
 
 
 // State data object

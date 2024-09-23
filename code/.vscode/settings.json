@@ -2,6 +2,8 @@
     "files.associations": {
         "inverse_geometry.h": "c",
         "gcode.h": "c",
-        "robot.h": "c"
+        "robot.h": "c",
+        "math.h": "c",
+        "stdint.h": "c"
     }
 }

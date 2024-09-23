@@ -33,7 +33,6 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 // some math constants used in this class
-#define M_PI		3.14159	    /* pi */
 #define TAN30       0.57735
 #define SIN120      0.86603
 #define COS120     -0.5
