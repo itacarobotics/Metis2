@@ -49,7 +49,17 @@
 // Type definitions
 ////////////////////////////////////////////////////////////////////////////////
 
+typedef struct
+{
+    gcode_data_t pos_home;
 
+    float via_points_time_step;
+    
+    float max_linear_vel;
+    float max_linear_acc;
+    float max_rot_vel;
+    float max_rot_acc;
+} tg_cfg_t;
 
 ////////////////////////////////////////////////////////////////////////////////
 // Public (global) externs
@@ -60,14 +70,17 @@
 // Public (global) function declarations
 ////////////////////////////////////////////////////////////////////////////////
 
-void tg_init(void);
+int32_t tg_init(tg_cfg_t *tg_cfg_);
 void tg_start(void);
 void tg_reset(void);
 
+int32_t tg_get_dft_cfg(tg_cfg_t *tg_cfg);
 
 int32_t tg_set_next_trajectory(gcode_t pos_goal);
 int32_t tg_get_via_point(gcode_t *pos);
-void tg_set_positioning(gcode_cmd_t cmd);
+
+int32_t tg_set_positioning(gcode_cmd_t cmd);
+int32_t tg_set_home(void);
 
 
 #endif // TRAJECTORY_GENERATOR_H

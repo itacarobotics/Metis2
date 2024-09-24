@@ -8,6 +8,7 @@ LIGHTGREEN  = "#c1ffc1"
 
 f = graphviz.Digraph("fsm_middleware", filename="assets/gv_fsm/_fsm_middleware.dot", format="png")
 
+
 f.attr("node", shape="ellipse")
 
 f.node("init", style="filled", color=GREEN, fillcolor=LIGHTGREEN)
@@ -23,7 +24,7 @@ f.edge("consume", "compute", label="")
 f.edge("consume", "produce", label="")
 
 f.edge("compute", "consume", label="")
-f.edge("compute", "produce", label="")
+f.edge("compute", "produce", label="get_via_point")
 f.edge("compute", "fatal", label="handle_fatal_error")
 
 f.edge("produce", "compute", label="")

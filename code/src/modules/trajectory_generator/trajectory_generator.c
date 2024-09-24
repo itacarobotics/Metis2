@@ -43,8 +43,29 @@
 typedef enum
 {
     ABSOLUTE,
-    RELATIVE
+    RELATIVE,
+    NOT_CALIBRATED,
 } positioning_t;
+
+typedef struct
+{
+    tg_cfg_t cfg;
+    positioning_t positioning;
+
+    // a0 = 0, a1 = 0, a2 = 0
+    float a3; 
+    float a4;
+    float a5;
+
+    gcode_t pos_start;
+    gcode_t pos_end;
+    float travel_time;
+
+    float via_point_idx;      // a value [0, 1]
+    float via_point_time;     // a value [0, T]
+
+} tg_state_t;
+
 
 ////////////////////////////////////////////////////////////////////////////////
 // Private (static) function declarations
@@ -74,17 +95,7 @@ static float tg_get_arc_constrained_time(float path_length, float max_vel,
 // Private (static) variables
 ////////////////////////////////////////////////////////////////////////////////
 
-// parameters of quintic polynomial
-static float        a3, a4, a5; // a0 = 0, a1 = 0, a2 = 0
-
-static gcode_t      pos_start;
-static gcode_t      pos_end;
-static float        travel_time;
-
-static float        via_point_idx;      // a value [0, 1]
-static float        via_point_time;     // a value [0, T]
-
-static positioning_t positioning;
+static tg_state_t st;
 
 ////////////////////////////////////////////////////////////////////////////////
 // Public (global) variables and externs
@@ -95,9 +106,30 @@ static positioning_t positioning;
 // Public (global) functions
 ////////////////////////////////////////////////////////////////////////////////
 
-void tg_init(void)
+/**
+ * @brief Initialize tragectory generator instance.
+ *
+ * @param[in] cfg The tg configuration. (FUTURE)
+ *
+ * @return 0 for success, else a "MOD_ERR" value. See code for details.
+ *
+ * This function initializes a tg module instance. Generally, it should not
+ * access other modules as they might not have been initialized yet.  An
+ * exception is the log module.
+ */
+int32_t tg_init(tg_cfg_t *tg_cfg)
 {
-    return;
+    if (tg_cfg == NULL) {
+        return MOD_ERR_BAD_ARGUMENT;
+    }
+
+    memset(&st, 0, sizeof(st));
+    st.cfg = *tg_cfg;   // import configuration
+    
+    st.pos_start.data.z = st.cfg.pos_home.z; // set home position
+    st.positioning = NOT_CALIBRATED;
+
+    return MOD_RET_OK;
 }
 
 void tg_start(void)
@@ -111,50 +143,67 @@ void tg_reset(void)
 }
 
 
+int32_t tg_get_dft_cfg(tg_cfg_t *tg_cfg)
+{
+    memset(&tg_cfg->pos_home, 0, sizeof(tg_cfg->pos_home));
+    tg_cfg->pos_home.z              = -50;  // [ mm ]
+    
+    tg_cfg->via_points_time_step    = 0.01; // [ s ]
+    tg_cfg->max_linear_vel          = 600;  // [ mm/s ]
+    tg_cfg->max_linear_acc          = 2000; // [ mm/s2 ]
+    tg_cfg->max_rot_vel             = 20;   // [ rad/s ]
+    tg_cfg->max_rot_acc             = 100;  // [ rad/s2 ]
+    return MOD_RET_OK;
+}
+
+
 
 int32_t tg_set_next_trajectory(gcode_t pos_goal)
 {
     int32_t rc;
 
     // update module's attributes
-    switch (positioning)
+    switch (st.positioning)
     {
     case ABSOLUTE:
-        pos_start      = pos_end;  // previous pos_end becomes new pos_start
-        pos_end        = pos_goal;
+        st.pos_start      = st.pos_end;  // previous pos_end becomes new pos_start
+        st.pos_end        = pos_goal;
         break;
 
     case RELATIVE:
-        pos_start      = pos_end;  // previous pos_end becomes new pos_start
-        pos_end.data.x = pos_start.data.x + pos_goal.data.x;
-        pos_end.data.y = pos_start.data.y + pos_goal.data.y;
-        pos_end.data.z = pos_start.data.z + pos_goal.data.z;
-        pos_end.data.i = pos_start.data.i + pos_goal.data.i;
-        pos_end.data.j = pos_start.data.j + pos_goal.data.j;
-        pos_end.data.k = pos_start.data.k + pos_goal.data.k;
+        st.pos_start      = st.pos_end;  // previous pos_end becomes new pos_start
+        st.pos_end.data.x = st.pos_start.data.x + pos_goal.data.x;
+        st.pos_end.data.y = st.pos_start.data.y + pos_goal.data.y;
+        st.pos_end.data.z = st.pos_start.data.z + pos_goal.data.z;
+        st.pos_end.data.i = st.pos_start.data.i + pos_goal.data.i;
+        st.pos_end.data.j = st.pos_start.data.j + pos_goal.data.j;
+        st.pos_end.data.k = st.pos_start.data.k + pos_goal.data.k;
         break;
-    
+
+    case NOT_CALIBRATED:
+        return MP_ERR_NOT_CALIBRATED;
+
     default:
         break;
     }
     
     // reset attributes
-    via_point_idx   = 0;
-    via_point_time  = 0;
+    st.via_point_idx   = 0;
+    st.via_point_time  = 0;
 
 
-    switch (pos_end.cmd)
+    switch (st.pos_end.cmd)
     {
     case G01:
-        rc = tg_set_next_trajectory__linear_interp(&pos_start, &pos_end);
+        rc = tg_set_next_trajectory__linear_interp(&st.pos_start, &st.pos_end);
         break;
     
     case G02:
-        rc = tg_set_next_trajectory__arc_cv_interp(&pos_start, &pos_end);
+        rc = tg_set_next_trajectory__arc_cv_interp(&st.pos_start, &st.pos_end);
         break;
     
     case G03:
-        rc = tg_set_next_trajectory__arc_ccw_interp(&pos_start, &pos_end);
+        rc = tg_set_next_trajectory__arc_ccw_interp(&st.pos_start, &st.pos_end);
         break;
     
     default:
@@ -169,7 +218,7 @@ int32_t tg_get_via_point(gcode_t *pos)
 {
     int32_t rc;
 
-    switch (pos_end.cmd)
+    switch (st.pos_end.cmd)
     {
     case G01:
         rc = tg_get_via_point__linear_interp(pos);
@@ -191,20 +240,32 @@ int32_t tg_get_via_point(gcode_t *pos)
 }
 
 
-void tg_set_positioning(gcode_cmd_t cmd)
+int32_t tg_set_positioning(gcode_cmd_t cmd)
 {
+    if (st.positioning == NOT_CALIBRATED) {
+        return MP_ERR_NOT_CALIBRATED;
+    }
+
     switch (cmd)
     {
     case G90:
-        positioning = ABSOLUTE;
+        st.positioning = ABSOLUTE;
         break;
     case G91:
-        positioning = RELATIVE;
+        st.positioning = RELATIVE;
         break;
     default:
         break;
     }
-    return;
+
+    return MOD_RET_OK;
+}
+
+int32_t tg_set_home(void) 
+{
+    st.pos_start.data = st.cfg.pos_home;
+    st.positioning = ABSOLUTE;
+    return MOD_RET_OK;
 }
 
 
@@ -224,7 +285,7 @@ static int32_t tg_set_next_trajectory__linear_interp(gcode_t *pos_start,
     path_length = tg_get_linear_len(pos_start, pos_end);
     if (path_length != 0) {
         path_travel_time = tg_get_linear_constrained_time(path_length, 
-                            MAX_LINEAR_VEL, MAX_LINEAR_ACC);
+                            st.cfg.max_linear_vel, st.cfg.max_linear_acc);
         // override if input value is greater
         path_travel_time = fmax(pos_end->data.t, path_travel_time);
     }
@@ -236,15 +297,15 @@ static int32_t tg_set_next_trajectory__linear_interp(gcode_t *pos_start,
     rot_length = abs(pos_end->data.k - pos_start->data.k);
     if (rot_length != 0) {
         rot_travel_time = tg_get_linear_constrained_time(rot_length, 
-                            MAX_ROTATION_VEL, MAX_ROTATION_ACC);
+                            st.cfg.max_rot_vel, st.cfg.max_rot_acc);
         // override if input value is greater
         rot_travel_time = fmax(pos_end->data.t, rot_travel_time);
     }
 
 
     // travel time that satisfies vel and acc constraints
-    travel_time = fmax(path_travel_time, rot_travel_time);
-    if (travel_time == 0) {
+    st.travel_time = fmax(path_travel_time, rot_travel_time);
+    if (st.travel_time == 0) {
         return MP_ERR_BAD_TRAVEL_TIME;
     }
 
@@ -252,9 +313,9 @@ static int32_t tg_set_next_trajectory__linear_interp(gcode_t *pos_start,
     // a0 = 0;
     // a1 = 0;
     // a2 = 0;
-    a3 =   10 / pow(travel_time, 3);
-    a4 =  -15 / pow(travel_time, 4);
-    a5 =    6 / pow(travel_time, 5);
+    st.a3 =   10 / pow(st.travel_time, 3);
+    st.a4 =  -15 / pow(st.travel_time, 4);
+    st.a5 =    6 / pow(st.travel_time, 5);
 
     return MOD_RET_OK;
 }
@@ -277,33 +338,33 @@ static int32_t tg_get_via_point__linear_interp(gcode_t *pos)
 {
     // mapping position index with quintic polynomial profile
     // a0 = 0; a1 = 0; a2 = 0;
-    via_point_idx  = a3 * pow(via_point_time, 3);
-    via_point_idx += a4 * pow(via_point_time, 4);
-    via_point_idx += a5 * pow(via_point_time, 5);
+    st.via_point_idx  = st.a3 * pow(st.via_point_time, 3);
+    st.via_point_idx += st.a4 * pow(st.via_point_time, 4);
+    st.via_point_idx += st.a5 * pow(st.via_point_time, 5);
 
-    if (via_point_idx > 1) {
+    if (st.via_point_idx > 1) {
         return MP_ERR_END_OF_TRAJECTORY;           // end point reached
     }
 
     // end point is almost reached
-    if ((via_point_time + VIA_POINTS_TIME_STEP) > travel_time) {
-        via_point_idx    = 1;           // avoid floating point errors
-        via_point_time   = travel_time;
+    if ((st.via_point_time + st.cfg.via_points_time_step) > st.travel_time) {
+        st.via_point_idx    = 1;           // avoid floating point errors
+        st.via_point_time   = st.travel_time;
     }
 
     // mapping end-effector position
-    pos->data.x =   ((1 - via_point_idx) * pos_start.data.x) + 
-                    (via_point_idx * pos_end.data.x);
-    pos->data.y =   ((1 - via_point_idx) * pos_start.data.y) + 
-                    (via_point_idx * pos_end.data.y);
-    pos->data.z =   ((1 - via_point_idx) * pos_start.data.z) + 
-                    (via_point_idx * pos_end.data.z);
-    pos->data.k =   ((1 - via_point_idx) * pos_start.data.k) + 
-                    (via_point_idx * pos_end.data.k);
-    pos->data.t = via_point_time;   // via point time stamp
+    pos->data.x =   ((1 - st.via_point_idx) * st.pos_start.data.x) + 
+                    (st.via_point_idx * st.pos_end.data.x);
+    pos->data.y =   ((1 - st.via_point_idx) * st.pos_start.data.y) + 
+                    (st.via_point_idx * st.pos_end.data.y);
+    pos->data.z =   ((1 - st.via_point_idx) * st.pos_start.data.z) + 
+                    (st.via_point_idx * st.pos_end.data.z);
+    pos->data.k =   ((1 - st.via_point_idx) * st.pos_start.data.k) + 
+                    (st.via_point_idx * st.pos_end.data.k);
+    pos->data.t = st.via_point_time;   // via point time stamp
 
     // update attribute
-    via_point_time += VIA_POINTS_TIME_STEP;
+    st.via_point_time += st.cfg.via_points_time_step;
     
     return MOD_RET_OK;
 }

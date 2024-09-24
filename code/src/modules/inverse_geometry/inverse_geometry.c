@@ -45,7 +45,6 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 
-
 ////////////////////////////////////////////////////////////////////////////////
 // Private (static) function declarations
 ////////////////////////////////////////////////////////////////////////////////
@@ -56,7 +55,7 @@ static int32_t ig_compute_angle(float x, float y, float z, float *q_i);
 // Private (static) variables
 ////////////////////////////////////////////////////////////////////////////////
 
-
+static ig_cfg_t ig_cfg;
 
 ////////////////////////////////////////////////////////////////////////////////
 // Public (global) variables and externs
@@ -67,6 +66,41 @@ static int32_t ig_compute_angle(float x, float y, float z, float *q_i);
 ////////////////////////////////////////////////////////////////////////////////
 // Public (global) functions
 ////////////////////////////////////////////////////////////////////////////////
+
+/**
+ * @brief Initialize inverse geometry instance.
+ *
+ * @param[in] cfg The ig configuration.
+ *
+ * @return 0 for success, else a "MOD_ERR" value. See code for details.
+ *
+ * This function initializes a ig module instance. Generally, it should not
+ * access other modules as they might not have been initialized yet.  An
+ * exception is the log module.
+ */
+int32_t ig_init(ig_cfg_t *ig_cfg_)
+{
+    if (ig_cfg_ == NULL) {
+        return MOD_ERR_BAD_ARGUMENT;
+    }
+
+    ig_cfg = *ig_cfg_;
+    return MOD_RET_OK;
+}
+
+
+int32_t ig_get_dft_cfg(ig_cfg_t *ig_cfg_)
+{
+    ig_cfg_->base_radius = 60;
+    ig_cfg_->forearm_len = 80;
+    ig_cfg_->biceps_len = 120;
+    ig_cfg_->ee_radius = 20;
+
+    ig_cfg_->joint_limit_min = -999;
+    ig_cfg_->joint_limit_max = 999;
+    return MOD_RET_OK;
+}
+
 
 /**
  *  @brief Inverse geometry of a 3-DOF delta robot.
@@ -130,15 +164,15 @@ static int32_t ig_compute_angle(float x, float y, float z, float *q_i)
 {
     // 
     float d, theta;
-    d = BASE_RADIUS - y - EE_RADIUS;
+    d = ig_cfg.base_radius - y - ig_cfg.ee_radius;
     theta = fabs(atan2(z, d));
 
     // 
     float a, c, lambda;
-    a = FOREARM_LENGTH*FOREARM_LENGTH - x*x;        // projecton of forearm onto zy plane
+    a = ig_cfg.forearm_len*ig_cfg.forearm_len - x*x;        // projecton of forearm onto zy plane
     c = d*d + z*z;                                  // distance between base and ee joint
-    lambda = fabs((BICEPS_LENGTH*BICEPS_LENGTH + c - a) /        // acos(lambda) 
-        (2 * BICEPS_LENGTH * sqrt(c)));
+    lambda = fabs((ig_cfg.biceps_len*ig_cfg.biceps_len + c - a) /        // acos(lambda) 
+        (2 * ig_cfg.biceps_len * sqrt(c)));
 
     if ( lambda > 1 ) {
         return MP_ERR_WS_LIMIT;   // no solution found
@@ -147,7 +181,7 @@ static int32_t ig_compute_angle(float x, float y, float z, float *q_i)
     *q_i = theta + acos(lambda) - M_PI;
 
     // check joint limits
-    if (*q_i <= JOINT_LIMIT_MIN || *q_i >= JOINT_LIMIT_MAX) {
+    if (*q_i <= ig_cfg.joint_limit_min || *q_i >= ig_cfg.joint_limit_max) {
         return MP_ERR_JOINT_LIMIT;
     }
 

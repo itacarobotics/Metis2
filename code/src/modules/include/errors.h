@@ -38,21 +38,21 @@
 
 // Error codes.
 #define MOD_RET_OK                   0
+#define MOD_ERR_BAD_ARGUMENT        -1
 // Motion planning
-#define MP_ERR_BAD_STATUS           -1
-#define MP_ERR_END_OF_TRAJECTORY    -1
-#define MP_ERR_BAD_ARGUMENT         -1
-#define MP_ERR_BAD_TRAVEL_TIME      -1
-#define MP_ERR_BAD_VIA_POINT        -1
-#define MP_ERR_BAD_TRAJECTORY       -1
-#define MP_ERR_WS_LIMIT             -1
-#define MP_ERR_JOINT_LIMIT          -1
+#define MP_ERR_END_OF_TRAJECTORY    -2
+#define MP_ERR_NOT_CALIBRATED       -3
+#define MP_ERR_BAD_TRAVEL_TIME      -4
+#define MP_ERR_BAD_VIA_POINT        -5
+#define MP_ERR_BAD_TRAJECTORY       -6
+#define MP_ERR_WS_LIMIT             -7
+#define MP_ERR_JOINT_LIMIT          -8
 // Buffer
-#define BFR_ERR_EMPTY               -1
-#define BFR_ERR_FULL                -2
-#define BFR_ERR_BUSY                -3
+#define BFR_ERR_EMPTY               -9
+#define BFR_ERR_FULL                -10
+#define BFR_ERR_BUSY                -11
 // Robot
-#define RBT_ERR_SB                  -3
+#define RBT_ERR_SB                  -12
 
 
 ////////////////////////////////////////////////////////////////////////////////

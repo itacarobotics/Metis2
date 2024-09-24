@@ -29,12 +29,14 @@ extern "C" {
 
 
 /*** USER CODE BEGIN DEFINE ***/
-#define RETCHECK(fn, state)     \
-{                               \
-    if ((fn < 0))               \
-      next_state = STATE_FATAL; \
-    else                        \
-      next_state = state;       \
+/**
+ * @brief Macro for fucntion error return check
+ */
+#define RETCHECK(fn)        \
+{                           \
+    rc = fn;                \
+    if ((rc < 0))           \
+      return STATE_FATAL;   \
 }
 /*** USER CODE END DEFINE ***/
 

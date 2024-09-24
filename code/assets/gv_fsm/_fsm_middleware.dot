@@ -10,7 +10,7 @@ digraph fsm_middleware {
 	consume -> compute [label=""]
 	consume -> produce [label=""]
 	compute -> consume [label=""]
-	compute -> produce [label=""]
+	compute -> produce [label=get_via_point]
 	compute -> fatal [label=handle_fatal_error]
 	produce -> compute [label=""]
 	produce -> consume [label=""]

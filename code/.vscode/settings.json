@@ -4,6 +4,7 @@
         "gcode.h": "c",
         "robot.h": "c",
         "math.h": "c",
-        "stdint.h": "c"
+        "stdint.h": "c",
+        "trajectory_generator.h": "c"
     }
 }

@@ -31,6 +31,7 @@
  */
 
 #include <stdint.h>
+#include <stddef.h>
 
 #define __USE_XOPEN
 #include <math.h>
@@ -48,6 +49,16 @@
 // Type definitions
 ////////////////////////////////////////////////////////////////////////////////
 
+typedef struct
+{
+    float base_radius;
+    float biceps_len;
+    float forearm_len;
+    float ee_radius;
+
+    float joint_limit_max;
+    float joint_limit_min;
+} ig_cfg_t;
 
 ////////////////////////////////////////////////////////////////////////////////
 // Public (global) externs
@@ -58,6 +69,10 @@
 ////////////////////////////////////////////////////////////////////////////////
 // Public (global) function declarations
 ////////////////////////////////////////////////////////////////////////////////
+
+int32_t ig_init(ig_cfg_t *ig_cfg_);
+
+int32_t ig_get_dft_cfg(ig_cfg_t *ig_cfg_);
 
 int32_t ig_get_inverse_geometry(gcode_t *pos);
 

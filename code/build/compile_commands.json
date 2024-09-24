@@ -1,0 +1,37 @@
+[
+{
+  "directory": "/home/ostifede02/itacarobotics/Metis2/code/build",
+  "command": "/usr/bin/gcc  -I/home/ostifede02/itacarobotics/Metis2/code/src/modules/include -I/home/ostifede02/itacarobotics/Metis2/code/src/app/include -g -std=gnu11 -o CMakeFiles/main.dir/src/modules/buffer/buffer.c.o -c /home/ostifede02/itacarobotics/Metis2/code/src/modules/buffer/buffer.c",
+  "file": "/home/ostifede02/itacarobotics/Metis2/code/src/modules/buffer/buffer.c"
+},
+{
+  "directory": "/home/ostifede02/itacarobotics/Metis2/code/build",
+  "command": "/usr/bin/gcc  -I/home/ostifede02/itacarobotics/Metis2/code/src/modules/include -I/home/ostifede02/itacarobotics/Metis2/code/src/app/include -g -std=gnu11 -o CMakeFiles/main.dir/src/modules/gcode/gcode.c.o -c /home/ostifede02/itacarobotics/Metis2/code/src/modules/gcode/gcode.c",
+  "file": "/home/ostifede02/itacarobotics/Metis2/code/src/modules/gcode/gcode.c"
+},
+{
+  "directory": "/home/ostifede02/itacarobotics/Metis2/code/build",
+  "command": "/usr/bin/gcc  -I/home/ostifede02/itacarobotics/Metis2/code/src/modules/include -I/home/ostifede02/itacarobotics/Metis2/code/src/app/include -g -std=gnu11 -o CMakeFiles/main.dir/src/modules/inverse_geometry/inverse_geometry.c.o -c /home/ostifede02/itacarobotics/Metis2/code/src/modules/inverse_geometry/inverse_geometry.c",
+  "file": "/home/ostifede02/itacarobotics/Metis2/code/src/modules/inverse_geometry/inverse_geometry.c"
+},
+{
+  "directory": "/home/ostifede02/itacarobotics/Metis2/code/build",
+  "command": "/usr/bin/gcc  -I/home/ostifede02/itacarobotics/Metis2/code/src/modules/include -I/home/ostifede02/itacarobotics/Metis2/code/src/app/include -g -std=gnu11 -o CMakeFiles/main.dir/src/modules/robot/robot.c.o -c /home/ostifede02/itacarobotics/Metis2/code/src/modules/robot/robot.c",
+  "file": "/home/ostifede02/itacarobotics/Metis2/code/src/modules/robot/robot.c"
+},
+{
+  "directory": "/home/ostifede02/itacarobotics/Metis2/code/build",
+  "command": "/usr/bin/gcc  -I/home/ostifede02/itacarobotics/Metis2/code/src/modules/include -I/home/ostifede02/itacarobotics/Metis2/code/src/app/include -g -std=gnu11 -o CMakeFiles/main.dir/src/modules/trajectory_generator/trajectory_generator.c.o -c /home/ostifede02/itacarobotics/Metis2/code/src/modules/trajectory_generator/trajectory_generator.c",
+  "file": "/home/ostifede02/itacarobotics/Metis2/code/src/modules/trajectory_generator/trajectory_generator.c"
+},
+{
+  "directory": "/home/ostifede02/itacarobotics/Metis2/code/build",
+  "command": "/usr/bin/gcc  -I/home/ostifede02/itacarobotics/Metis2/code/src/modules/include -I/home/ostifede02/itacarobotics/Metis2/code/src/app/include -g -std=gnu11 -o CMakeFiles/main.dir/src/app/fsm_middleware.c.o -c /home/ostifede02/itacarobotics/Metis2/code/src/app/fsm_middleware.c",
+  "file": "/home/ostifede02/itacarobotics/Metis2/code/src/app/fsm_middleware.c"
+},
+{
+  "directory": "/home/ostifede02/itacarobotics/Metis2/code/build",
+  "command": "/usr/bin/gcc  -I/home/ostifede02/itacarobotics/Metis2/code/src/modules/include -I/home/ostifede02/itacarobotics/Metis2/code/src/app/include -g -std=gnu11 -o CMakeFiles/main.dir/src/app/app_main.c.o -c /home/ostifede02/itacarobotics/Metis2/code/src/app/app_main.c",
+  "file": "/home/ostifede02/itacarobotics/Metis2/code/src/app/app_main.c"
+}
+]
