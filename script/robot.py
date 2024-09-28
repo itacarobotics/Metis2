@@ -1,0 +1,4 @@
+BASE_RADIUS     = 55
+BICEPS_LEN      = 85
+FOREARM_LEN     = 150
+EE_RADIUS       = 35

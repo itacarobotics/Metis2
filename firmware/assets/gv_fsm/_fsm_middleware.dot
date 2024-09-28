@@ -1,0 +1,18 @@
+digraph fsm_middleware {
+	node [shape=ellipse]
+	init [color="#66ff66" fillcolor="#c1ffc1" style=filled]
+	consume
+	compute
+	produce
+	fatal [color="#ff6666" fillcolor="#ffc1c1" style=filled]
+	init -> consume [label=""]
+	consume -> consume [label=""]
+	consume -> compute [label=set_next_trajectory]
+	consume -> produce [label=""]
+	compute -> produce [label=get_via_point]
+	compute -> fatal [label=handle_fatal_error]
+	produce -> compute [label=""]
+	produce -> consume [label=""]
+	produce -> produce [label=""]
+	produce -> fatal [label=handle_fatal_error]
+}
