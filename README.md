@@ -6,7 +6,7 @@ The new delta robot provides a modular design, with less components and assembly
 
 
 ## Electronics
-The control unit of the robot is the BIGTREETECH-SKR-mini-E3, which is a main board for 3D printers. Beyond that, a custom PCB has been designed as a shield for the main board, in order to provide GPIOs and power supply for encoders and motors using terminal blocks.
+The control unit of the robot is the BIGTREETECH-SKR-mini-E3 board, which is a main board for 3D printers. Beyond that, a custom PCB has been designed as a shield for the main board, in order to better manage GPIOs and power supply for encoders and motors using terminal blocks.
 
 
 ## Firmware
