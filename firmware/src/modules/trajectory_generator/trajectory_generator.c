@@ -323,13 +323,13 @@ static int32_t tg_set_next_trajectory__linear_interp(gcode_t *pos_start,
 static int32_t tg_set_next_trajectory__arc_cv_interp(gcode_t *pos_start, 
                                           gcode_t *pos_end)
 {
-    return MP_ERR_BAD_TRAJECTORY;
+    return 0;
 }
 
 static int32_t tg_set_next_trajectory__arc_ccw_interp(gcode_t *pos_start, 
                                           gcode_t *pos_end)
 {
-    return MP_ERR_BAD_TRAJECTORY;
+    return 0;
 }
 
 
@@ -371,12 +371,12 @@ static int32_t tg_get_via_point__linear_interp(gcode_t *pos)
 
 static int32_t tg_get_via_point__arc_cw_interp(gcode_t *pos)
 {
-    return MP_ERR_BAD_VIA_POINT;
+    return 0;
 }
 
 static int32_t tg_get_via_point__arc_ccw_interp(gcode_t *pos)
 {
-    return MP_ERR_BAD_VIA_POINT;
+    return 0;
 }
 
 

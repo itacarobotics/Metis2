@@ -9,7 +9,7 @@ Generation date: 2024-09-22 19:51:29 +0200
 Generated from: ../../assets/gv_fsm/_fsm_middleware.dot
 The finite state machine has:
   5 states
-  3 transition functions
+  1 transition functions
 ******************************************************************************/
 
 #include <syslog.h>
@@ -17,16 +17,17 @@ The finite state machine has:
 
 #include "fsm_middleware.h"
 
-// SEARCH FOR Your Code Here FOR CODE INSERTION POINTS!
-
 // GLOBALS
 // State human-readable names
 const char *state_names[] = {"init", "consume", "compute", "produce", "fatal"};
 
 
+/*** USER CODE BEGIN PRIVATE ***/
+static int32_t rc;
+static gcode_t gcode_line;
+/*** USER CODE END PRIVATE ***/
+
 /*** USER CODE BEGIN GLOBAL ***/
-int32_t rc;
-gcode_t gcode_line;
 bfr_gcode_t bfr_gcode_cmds;
 bfr_gcode_t bfr_robot_cmds;
 /*** USER CODE END GLOBAL ***/
@@ -79,7 +80,7 @@ state_t do_init(state_data_t *data) {
     syslog(LOG_INFO, "[TG] init end");
 
     syslog(LOG_INFO, "[IG] init start");
-    ig_cfg_t ig_cfg; 
+    ig_cfg_t ig_cfg;
     RETCHECK(ig_get_dft_cfg(&ig_cfg));
     RETCHECK(ig_init(&ig_cfg));
     syslog(LOG_INFO, "[IG] init end");
@@ -104,11 +105,11 @@ state_t do_init(state_data_t *data) {
     bfr_produce(&bfr_gcode_cmds, gcode_line);
 
     gcode_line.cmd = G01;
-    gcode_line.data.x = -3;
-    gcode_line.data.y = 3;
-    gcode_line.data.z = 2;
-    gcode_line.data.k = 1;
-    gcode_line.data.k = 2.3;
+    gcode_line.data.x = 0;
+    gcode_line.data.y = 0;
+    gcode_line.data.z = -180;
+    gcode_line.data.k = 0;
+    gcode_line.data.t = 0;
     bfr_produce(&bfr_gcode_cmds, gcode_line);
     /*** TEST END ***/
 
@@ -119,7 +120,7 @@ state_t do_init(state_data_t *data) {
         syslog(LOG_WARNING, "[FSM] Cannot pass from init to %s, remaining in this state", state_names[next_state]);
         next_state = NO_CHANGE;
     }
-  
+
     return next_state;
 }
 
@@ -193,6 +194,7 @@ state_t do_compute(state_data_t *data) {
 
     /*** USER CODE BEGIN COMPUTE ***/
     RETCHECK(tg_get_via_point(&gcode_line));
+    RETCHECK(ig_get_inverse_geometry(&gcode_line));
     /*** USER CODE END COMPUTE ***/
 
     switch (next_state) {
@@ -220,8 +222,8 @@ state_t do_produce(state_data_t *data) {
     BFRCHECK(bfr_produce(&bfr_robot_cmds, gcode_line));
 
     syslog(LOG_INFO, "[PRODUCED] cmd: %d\tx: %f y: %f z: %f t: %f", 
-    gcode_line.cmd, gcode_line.data.x, gcode_line.data.y, 
-    gcode_line.data.z, gcode_line.data.t);
+        gcode_line.cmd, gcode_line.data.x, gcode_line.data.y, 
+        gcode_line.data.z, gcode_line.data.t);
 
     // handle item
     switch (gcode_line.cmd)
@@ -270,11 +272,38 @@ state_t do_fatal(state_data_t *data) {
     syslog(LOG_INFO, "[FSM] In state fatal");
 
     /*** USER CODE BEGIN FATAL ***/
+    switch (rc)
+    {
+    case MP_END_OF_TRAJECTORY:
+        syslog(LOG_INFO, "MP_END_OF_TRAJECTORY");
+        next_state = STATE_CONSUME;
+        break;
+    case MOD_ERR_BAD_ARGUMENT:
+        syslog(LOG_ERR, "MOD_ERR_BAD_ARGUMENT");
+        break;
+    case MP_ERR_NOT_CALIBRATED:
+        syslog(LOG_ERR, "MP_ERR_NOT_CALIBRATED");
+        break;
+    case MP_ERR_BAD_TRAVEL_TIME:
+        syslog(LOG_ERR, "MP_ERR_BAD_TRAVEL_TIME");
+        break;
+    case MP_ERR_WS_LIMIT:
+        syslog(LOG_ERR, "MP_ERR_WS_LIMIT");
+        break;
+    case MP_ERR_JOINT_LIMIT:
+        syslog(LOG_ERR, "MP_ERR_JOINT_LIMIT");
+        break;
 
+    default:
+        syslog(LOG_ERR, "UNDEFINED ERROR");
+        break;
+    }
+    
     /*** USER CODE END FATAL ***/
 
     switch (next_state) {
     case NO_CHANGE:
+    case STATE_CONSUME:
         break;
     default:
         syslog(LOG_WARNING, "[FSM] Cannot pass from fatal to %s, remaining in this state", state_names[next_state]);
@@ -305,55 +334,11 @@ void handle_fatal_error(state_data_t *data) {
     syslog(LOG_INFO, "[FSM] State transition handle_fatal_error");
 
     /*** USER CODE BEGIN HANDLE_FATAL_ERROR ***/
-    switch (rc)
-    {
-    case MP_END_OF_TRAJECTORY:
 
-        break;
-    case MOD_ERR_BAD_ARGUMENT:
-        break;
-    case MP_ERR_NOT_CALIBRATED:
-        break;
-    case MP_ERR_BAD_TRAVEL_TIME:
-        break;
-    case MP_ERR_BAD_VIA_POINT:
-        break;
-    case MP_ERR_BAD_TRAJECTORY:
-        break;
-    case MP_ERR_WS_LIMIT:
-        break;
-    case MP_ERR_JOINT_LIMIT:
-        break;
-
-    default:
-        break;
-    }  
     /*** USER CODE END HANDLE_FATAL_ERROR ***/
 
     return;
 }
-
-// // This function is called in 1 transition:
-// // 1. from consume to compute
-// void set_next_trajectory(state_data_t *data) {
-//     syslog(LOG_INFO, "[FSM] State transition set_next_trajectory");
-
-//     /*** USER CODE BEGIN SET_NEXT_TRAJECTORY ***/
-//     rc = tg_set_next_trajectory(gcode_line);
-//     /*** USER CODE END SET_NEXT_TRAJECTORY ***/
-//     return;
-// }
-
-// // This function is called in 1 transition:
-// // 1. from compute to produce
-// void get_via_point(state_data_t *data) {
-//     syslog(LOG_INFO, "[FSM] State transition set_next_trajectory");
-
-//     /*** USER CODE BEGIN SET_NEXT_TRAJECTORY ***/
-//     rc = tg_get_via_point(&gcode_line);
-//     /*** USER CODE END SET_NEXT_TRAJECTORY ***/
-//     return;
-// }
 
 
 

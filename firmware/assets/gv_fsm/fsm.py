@@ -20,17 +20,18 @@ f.node("fatal", style="filled", color=RED, fillcolor=LIGHTRED)
 f.edge("init", "consume", label="")
 
 f.edge("consume", "consume", label="")
-f.edge("consume", "compute", label="set_next_trajectory")
+f.edge("consume", "compute", label="")
 f.edge("consume", "produce", label="")
 
-f.edge("compute", "produce", label="get_via_point")
-f.edge("compute", "fatal", label="handle_fatal_error")
+f.edge("compute", "produce", label="")
+f.edge("compute", "fatal", label="handle_error")
 
 f.edge("produce", "compute", label="")
 f.edge("produce", "consume", label="")
 f.edge("produce", "produce", label="")
-f.edge("produce", "fatal", label="handle_fatal_error")
+f.edge("produce", "fatal", label="handle_error")
 
+f.edge("fatal", "consume", label="")
 
 # Render and display the graph
 f.view()

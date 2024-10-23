@@ -1,7 +1,7 @@
 CMakeFiles/main.dir/src/modules/trajectory_generator/trajectory_generator.c.o: \
- /home/ostifede02/itacarobotics/Metis2/code/src/modules/trajectory_generator/trajectory_generator.c \
+ /home/ostifede02/itacarobotics/Metis2/firmware/src/modules/trajectory_generator/trajectory_generator.c \
  /usr/include/stdc-predef.h \
- /home/ostifede02/itacarobotics/Metis2/code/src/modules/include/trajectory_generator.h \
+ /home/ostifede02/itacarobotics/Metis2/firmware/src/modules/include/trajectory_generator.h \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/stdint.h /usr/include/stdint.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
  /usr/include/features.h /usr/include/features-time64.h \
@@ -54,6 +54,6 @@ CMakeFiles/main.dir/src/modules/trajectory_generator/trajectory_generator.c.o: \
  /usr/include/x86_64-linux-gnu/bits/fp-fast.h \
  /usr/include/x86_64-linux-gnu/bits/mathcalls-helper-functions.h \
  /usr/include/x86_64-linux-gnu/bits/mathcalls.h \
- /home/ostifede02/itacarobotics/Metis2/code/src/modules/include/gcode.h \
- /home/ostifede02/itacarobotics/Metis2/code/src/modules/include/robot.h \
- /home/ostifede02/itacarobotics/Metis2/code/src/modules/include/errors.h
+ /home/ostifede02/itacarobotics/Metis2/firmware/src/modules/include/gcode.h \
+ /home/ostifede02/itacarobotics/Metis2/firmware/src/modules/include/robot.h \
+ /home/ostifede02/itacarobotics/Metis2/firmware/src/modules/include/errors.h

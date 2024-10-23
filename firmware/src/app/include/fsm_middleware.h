@@ -32,8 +32,9 @@ extern "C" {
 /**
  * @brief Macro for fucntion error return check
  */
-#define RETCHECK(rc)                \
+#define RETCHECK(fn)                \
 {                                   \
+    rc = fn;                        \
     switch (rc)                     \
     {                               \
     case MOD_RET_OK:                \
@@ -50,7 +51,8 @@ extern "C" {
  */
 #define BFRCHECK(fn)                \
 {                                   \
-    switch (fn)                     \
+    rc = fn;                        \
+    switch (rc)                     \
     {                               \
     case MOD_RET_OK:                \
         break;                      \

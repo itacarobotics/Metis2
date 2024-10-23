@@ -91,13 +91,13 @@ int32_t ig_init(ig_cfg_t *ig_cfg_)
 
 int32_t ig_get_dft_cfg(ig_cfg_t *ig_cfg_)
 {
-    ig_cfg_->base_radius = 60;
-    ig_cfg_->forearm_len = 80;
-    ig_cfg_->biceps_len = 120;
-    ig_cfg_->ee_radius = 20;
+    ig_cfg_->base_radius = 50;
+    ig_cfg_->forearm_len = 85;
+    ig_cfg_->biceps_len = 215;
+    ig_cfg_->ee_radius = 30;
 
-    ig_cfg_->joint_limit_min = -999;
-    ig_cfg_->joint_limit_max = 999;
+    ig_cfg_->joint_limit_min = -M_PI/2;
+    ig_cfg_->joint_limit_max = M_PI;
     return MOD_RET_OK;
 }
 
@@ -152,7 +152,7 @@ int32_t ig_get_inverse_geometry(gcode_t *pos)
     // chain 4
     pos->data.q4 = pos->data.k;
 
-    return 0;    // no errors encountered
+    return MOD_RET_OK;    // no errors encountered
 }
 
 
@@ -185,5 +185,5 @@ static int32_t ig_compute_angle(float x, float y, float z, float *q_i)
         return MP_ERR_JOINT_LIMIT;
     }
 
-    return 0;        // solution found
+    return MOD_RET_OK;        // solution found
 }

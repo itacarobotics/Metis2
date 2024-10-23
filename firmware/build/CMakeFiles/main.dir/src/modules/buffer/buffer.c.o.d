@@ -1,7 +1,7 @@
 CMakeFiles/main.dir/src/modules/buffer/buffer.c.o: \
- /home/ostifede02/itacarobotics/Metis2/code/src/modules/buffer/buffer.c \
+ /home/ostifede02/itacarobotics/Metis2/firmware/src/modules/buffer/buffer.c \
  /usr/include/stdc-predef.h \
- /home/ostifede02/itacarobotics/Metis2/code/src/modules/include/buffer.h \
+ /home/ostifede02/itacarobotics/Metis2/firmware/src/modules/include/buffer.h \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/stdint.h /usr/include/stdint.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
  /usr/include/features.h /usr/include/features-time64.h \
@@ -44,6 +44,6 @@ CMakeFiles/main.dir/src/modules/buffer/buffer.c.o: \
  /usr/include/x86_64-linux-gnu/bits/struct_mutex.h \
  /usr/include/x86_64-linux-gnu/bits/struct_rwlock.h /usr/include/alloca.h \
  /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
- /home/ostifede02/itacarobotics/Metis2/code/src/modules/include/gcode.h \
- /home/ostifede02/itacarobotics/Metis2/code/src/modules/include/errors.h \
- /home/ostifede02/itacarobotics/Metis2/code/src/modules/include/robot.h
+ /home/ostifede02/itacarobotics/Metis2/firmware/src/modules/include/gcode.h \
+ /home/ostifede02/itacarobotics/Metis2/firmware/src/modules/include/errors.h \
+ /home/ostifede02/itacarobotics/Metis2/firmware/src/modules/include/robot.h

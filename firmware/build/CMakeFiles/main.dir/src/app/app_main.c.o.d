@@ -1,5 +1,5 @@
 CMakeFiles/main.dir/src/app/app_main.c.o: \
- /home/ostifede02/itacarobotics/Metis2/code/src/app/app_main.c \
+ /home/ostifede02/itacarobotics/Metis2/firmware/src/app/app_main.c \
  /usr/include/stdc-predef.h /usr/include/stdio.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
  /usr/include/features.h /usr/include/features-time64.h \
@@ -31,7 +31,7 @@ CMakeFiles/main.dir/src/app/app_main.c.o: \
  /usr/include/x86_64-linux-gnu/bits/unistd_ext.h /usr/include/syslog.h \
  /usr/include/x86_64-linux-gnu/sys/syslog.h \
  /usr/include/x86_64-linux-gnu/bits/syslog-path.h \
- /home/ostifede02/itacarobotics/Metis2/code/src/app/include/fsm_middleware.h \
+ /home/ostifede02/itacarobotics/Metis2/firmware/src/app/include/fsm_middleware.h \
  /usr/include/stdlib.h /usr/include/x86_64-linux-gnu/bits/waitflags.h \
  /usr/include/x86_64-linux-gnu/bits/waitstatus.h \
  /usr/include/x86_64-linux-gnu/sys/types.h \
@@ -57,14 +57,14 @@ CMakeFiles/main.dir/src/app/app_main.c.o: \
  /usr/include/x86_64-linux-gnu/bits/struct_mutex.h \
  /usr/include/x86_64-linux-gnu/bits/struct_rwlock.h /usr/include/alloca.h \
  /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
- /home/ostifede02/itacarobotics/Metis2/code/src/modules/include/buffer.h \
+ /home/ostifede02/itacarobotics/Metis2/firmware/src/modules/include/buffer.h \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/stdint.h /usr/include/stdint.h \
  /usr/include/x86_64-linux-gnu/bits/wchar.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
- /home/ostifede02/itacarobotics/Metis2/code/src/modules/include/gcode.h \
- /home/ostifede02/itacarobotics/Metis2/code/src/modules/include/errors.h \
- /home/ostifede02/itacarobotics/Metis2/code/src/modules/include/robot.h \
- /home/ostifede02/itacarobotics/Metis2/code/src/modules/include/trajectory_generator.h \
+ /home/ostifede02/itacarobotics/Metis2/firmware/src/modules/include/gcode.h \
+ /home/ostifede02/itacarobotics/Metis2/firmware/src/modules/include/errors.h \
+ /home/ostifede02/itacarobotics/Metis2/firmware/src/modules/include/robot.h \
+ /home/ostifede02/itacarobotics/Metis2/firmware/src/modules/include/trajectory_generator.h \
  /usr/include/string.h \
  /usr/include/x86_64-linux-gnu/bits/types/locale_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h \
@@ -76,6 +76,6 @@ CMakeFiles/main.dir/src/app/app_main.c.o: \
  /usr/include/x86_64-linux-gnu/bits/fp-fast.h \
  /usr/include/x86_64-linux-gnu/bits/mathcalls-helper-functions.h \
  /usr/include/x86_64-linux-gnu/bits/mathcalls.h \
- /home/ostifede02/itacarobotics/Metis2/code/src/modules/include/inverse_geometry.h \
- /home/ostifede02/itacarobotics/Metis2/code/src/modules/include/gcode.h \
- /home/ostifede02/itacarobotics/Metis2/code/src/modules/include/robot.h
+ /home/ostifede02/itacarobotics/Metis2/firmware/src/modules/include/inverse_geometry.h \
+ /home/ostifede02/itacarobotics/Metis2/firmware/src/modules/include/gcode.h \
+ /home/ostifede02/itacarobotics/Metis2/firmware/src/modules/include/robot.h

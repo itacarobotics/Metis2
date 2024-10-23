@@ -11,7 +11,7 @@ int main() {
   syslog(LOG_INFO, "Starting SM");
   do {
     cur_state = run_middleware(cur_state, NULL);
-    sleep(1);
+    usleep(500000);
   } while (cur_state != STATE_FATAL);
   run_middleware(cur_state, NULL);
   return 0;

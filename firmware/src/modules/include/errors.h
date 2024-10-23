@@ -43,8 +43,8 @@
 #define MP_END_OF_TRAJECTORY        -2
 #define MP_ERR_NOT_CALIBRATED       -3
 #define MP_ERR_BAD_TRAVEL_TIME      -4
-#define MP_ERR_BAD_VIA_POINT        -5
-#define MP_ERR_BAD_TRAJECTORY       -6
+// #define MP_ERR_BAD_VIA_POINT        -5
+// #define MP_ERR_BAD_TRAJECTORY       -6
 #define MP_ERR_WS_LIMIT             -7
 #define MP_ERR_JOINT_LIMIT          -8
 // Buffer
